@@ -1,0 +1,19 @@
+<div class="text-center">
+  <h1><%= @user.name %>さんのフォロワー一覧</h1>
+</div>
+<div>
+  <ul class="list-unstyled">
+    <% @followers.each do |follower| %>
+      <li>
+        <div class="p-sm-2 my-2">
+          <div class="text-center">
+            <h4><p>ユーザー：<%= link_to follower.name, user_path(follower), class: "text-decoration-none" %></p></h4>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <div class="pagination">
+    <%== pagy_bootstrap_nav(@pagy) %>
+  </div>
+</div>
