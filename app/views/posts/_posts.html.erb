@@ -1,0 +1,24 @@
+
+<% if posts.any? %>
+  <ul class="list-unstyled">
+    <% posts.each do |post| %>
+      <li>
+        <div class="border border-primary p-sm-2 my-1 rounded">
+          <div class="text-left">
+            <p>ユーザー：<%= link_to post.user.name, user_path(post.user), class: "text-decoration-none" %></p>
+            <p>タイトル：<%= post.title %></p>
+            <p>内容：<%= post.content %></p>
+            <p>ファイル：<a href=<%= post.file.url %> download> <%= post.file_identifier %></a></p>
+            <p class="text-muted">posted at <%= post.created_at %></p>
+          </div>
+          <div>
+            <% if current_user == post.user %>
+              <%= link_to "削除", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+            <% end %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <%== pagy_bootstrap_nav(@pagy) %>
+<% end %>
