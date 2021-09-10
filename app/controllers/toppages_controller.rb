@@ -5,4 +5,5 @@ class ToppagesController < ApplicationController
       @pagy, @posts = pagy(Post.order(id: :desc))
     end
   end
+  
 end
