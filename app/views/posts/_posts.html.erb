@@ -15,6 +15,17 @@
             <% if current_user == post.user %>
               <%= link_to "削除", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
             <% end %>
+            <% if current_user.favoriting?(post) %>
+              <%= form_with(model: current_user.favorites.find_by(post_id: post.id), method: :delete) do |f| %>
+             　  <%= hidden_field_tag :post_id, post.id %>
+               　　<%= f.submit 'unfavorite', class: 'btn btn-danger btn-sm' %>
+              　<% end %>
+            <% else %>
+              <%= form_with(model: current_user.favorites.build) do |f| %>
+            　　 <%= hidden_field_tag :post_id,  post.id %>
+              　<%= f.submit 'favorite', class: 'btn btn-primary btn-sm' %>
+              <% end %>
+            <% end %>
           </div>
         </div>
       </li>
