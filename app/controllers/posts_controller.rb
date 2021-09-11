@@ -23,6 +23,15 @@ class PostsController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
   
+  def edit
+    @post = current_user.posts.find_by(id: params[:id])
+  end
+  
+  def update
+    post = Post.find(params[:id])
+    post.update(post_params)
+  end
+  
   private
 
   def post_params

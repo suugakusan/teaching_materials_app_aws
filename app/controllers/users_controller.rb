@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @pagy, @posts = pagy(@user.posts.order(id: :desc))
+    @favoritings = @user.favoritings
   end
 
   def new
@@ -23,12 +24,17 @@ class UsersController < ApplicationController
   
   def followings
     @user = User.find(params[:id])
-    @pagy, @followings = pagy(@user.followings)
+     @pagy, @followings = pagy(@user.followings)
   end
 
   def followers
     @user = User.find(params[:id])
     @pagy, @followers = pagy(@user.followers)
+  end
+  
+  def likes
+    @user = User.find(params[:id])
+    @pagy, @favoritings = pagy(@user.favoritings)
   end
   
   private
