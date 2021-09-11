@@ -11,6 +11,6 @@ class Post < ApplicationRecord
   validates :subject_id, presence: true, length: { maximum: 1 }
   
   def self.search(keyword)
-    where(["title like? OR content like?", "%#{keyword}%", "%#{keyword}%"])
+     where(["title like? OR content like? OR subject_id like?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%"])
   end
 end
