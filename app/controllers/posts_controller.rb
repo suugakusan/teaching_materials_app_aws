@@ -30,15 +30,19 @@ class PostsController < ApplicationController
   def update
     post = Post.find(params[:id])
     if post.update(post_params)
-      flash[:success] = 'Message は正常に更新されました'
+      flash[:success] = '投稿は正常に更新されました'
       redirect_to root_url
     else
-      flash.now[:danger] = 'Message は更新されませんでした'
+      flash.now[:danger] = '投稿は更新されませんでした'
       render :edit
     end
-    
   end
   
+  def search
+    @posts = Post.search(params[:keyword])
+    @keyword = params[:keyword]
+    render "search"
+  end
   
   private
 
