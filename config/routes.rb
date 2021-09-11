@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   
   get 'signup', to: 'users#new'
-  
+ 
   post '/guest', to: 'guest_sessions#create'
   resources :users, only: [:show, :create] do
     member do
@@ -16,6 +16,6 @@ Rails.application.routes.draw do
     end
   end
   resources :favorites, only: [:create, :destroy]
-  resources :posts, only: [:new, :create, :destroy, :update, :edit]
+  resources :posts, only: [:new, :create, :destroy, :update, :edit] 
   resources :relationships, only: [:create, :destroy]
 end

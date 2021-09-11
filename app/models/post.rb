@@ -10,5 +10,4 @@ class Post < ApplicationRecord
   validates :file, presence: true, length: { maximum: 255 }
   validates :subject_id, presence: true, length: { maximum: 1 }
   
-  
 end
