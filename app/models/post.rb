@@ -10,5 +10,7 @@ class Post < ApplicationRecord
   validates :file, presence: true, length: { maximum: 255 }
   validates :subject_id, presence: true, length: { maximum: 1 }
   
-  
+  def self.search(keyword)
+    where(["title like? OR content like?", "%#{keyword}%", "%#{keyword}%"])
+  end
 end
