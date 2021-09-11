@@ -1,0 +1,24 @@
+<% if favoritings.any? %>
+  <ul class="list-unstyled mt-2">
+    <% favoritings.each do |favorite| %>
+      <li class="d-flex">
+        <div class="d-flex">
+           <% if current_user == favorite.user %>
+              <%= link_to "Delete", favorite, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+            <% end %>
+            <% if current_user.favoriting?(favorite) %>
+              <%= form_with(model: current_user.favorites.find_by(post_id: favorite.id),  method: :delete) do |f| %>
+              <%= hidden_field_tag :post_id, favorite.id %>
+                <%= f.submit 'unfavorite', class: 'btn btn-danger btn-sm ' %>
+              <% end %>
+            <% else %>
+               <%= form_with(model: current_user.favorites.build) do |f| %>
+                <%= hidden_field_tag :post_id, favorite.id %>
+                <%= f.submit 'favorite', class: 'btn btn-primary btn-sm ' %>
+               <% end %>
+            <% end %>
+          </div>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

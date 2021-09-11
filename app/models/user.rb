@@ -51,6 +51,7 @@ class User < ApplicationRecord
     Post.where(user_id: self.following_ids + [self.id])
   end
   
+  
   def favorite(like_post)
     self.favorites.find_or_create_by(post_id: like_post.id)
   end

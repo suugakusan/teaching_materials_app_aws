@@ -6,4 +6,13 @@ class ToppagesController < ApplicationController
     end
   end
   
+  def likes
+    @user = User.find(params[:id])
+    @pagy, @favoritings = pagy(@user.favoritings)
+  end
+  
+  def followings
+    @user = User.find(params[:id])
+    @pagy, @followings = pagy(@user.followings)
+  end
 end
