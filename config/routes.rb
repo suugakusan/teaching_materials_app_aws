@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   
   get 'signup', to: 'users#new'
+  
+  post '/guest', to: 'guest_sessions#create'
   resources :users, only: [:show, :create] do
     member do
       get :followings
