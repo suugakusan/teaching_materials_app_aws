@@ -1,0 +1,42 @@
+<div class="text-center">
+  <h1><%= @user.name %>さんのお気に入り一覧</h1>
+</div>
+<% if @favoritings.any? %>
+  <ul class="list-unstyled mt-2">
+    <% favoritings.each do |favorite| %>
+      <li class="d-flex">
+        <div>
+         <div class="border border-primary p-sm-2 my-1 rounded">
+          <div class="text-left">
+            <p>ユーザー：<%= link_to favorite.user.name, user_path(favorite.user), class: "text-decoration-none" %></p>
+            <p>タイトル：<%= favorite.title %></p>
+            <p>内容：<%= favorite.content %></p>
+            <p>ファイル：<a href=<%= favorite.file.url %> download> <%= favorite.file_identifier %></a></p>
+            <p class="text-muted">posted at <%= favorite.created_at %></p>
+          </div>
+         <div>
+            <% if current_user == post.user %>
+              <%= link_to "削除", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+            <% end %>
+         <div class="d-flex">
+           <% if current_user == favorite.user %>
+              <%= link_to "Delete", favorite, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+            <% end %>
+            <% if current_user.favoriting?(favorite) %>
+              <%= form_with(model: current_user.favorites.find_by(post_id: favorite.id),  method: :delete) do |f| %>
+              <%= hidden_field_tag :post_id, favorite.id %>
+                <%= f.submit 'unfavorite', class: 'btn btn-danger btn-sm ' %>
+              <% end %>
+            <% else %>
+               <%= form_with(model: current_user.favorites.build) do |f| %>
+                <%= hidden_field_tag :post_id, favorite.id %>
+                <%= f.submit 'favorite', class: 'btn btn-primary btn-sm ' %>
+               <% end %>
+            <% end %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <%== pagy_bootstrap_nav(@pagy) %>
+<% end %>

@@ -31,6 +31,11 @@ class UsersController < ApplicationController
     @pagy, @followers = pagy(@user.followers)
   end
   
+  def likes
+    @user = User.find(params[:id])
+    @pagy, @favoritings = pagy(@user.favoritings)
+  end
+  
   private
 
   def user_params
