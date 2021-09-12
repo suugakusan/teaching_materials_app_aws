@@ -29,6 +29,6 @@ class Post < ApplicationRecord
   end
   
   def self.subject_search(keyword)
-     where(["subject_id like?", "%#{keyword}%"])
+     where(["subject_id::integer like?", "%#{keyword}%"])
   end
 end
