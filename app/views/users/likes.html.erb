@@ -8,7 +8,7 @@
          <div class="border border-primary p-sm-2 my-1 rounded">
           <div class="text-center">
             <p>ユーザー：<%= link_to favorite.user.name, user_path(favorite.user), class: "text-decoration-none" %></p>
-            <p>タイトル：<%= favorite.title %></p>
+            <p>タイトル：<%= favorite.title %>[<%= favorite.subject_id %>]</p>
             <p>内容：<%= favorite.content %></p>
             <p>ファイル：<a href=<%= favorite.file.url %> download> <%= favorite.file_identifier %></a></p>
             <p class="text-muted">posted at <%= favorite.created_at %></p>
