@@ -1,5 +1,5 @@
  <div class="text-center">
-   <h1>「<%= @keyword1%>」の検索結果</h1>
+   <h1>「<%= Post.subject_ids.keys[@keyword1.to_i-1] %>」の検索結果</h1>
  </div>
  <ul class="list-unstyled">
    <div class="row text-center">
