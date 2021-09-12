@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     else
       @pagy, @posts = pagy(current_user.posts.order(id: :desc))
       flash.now[:danger] = 'メッセージの投稿に失敗しました。'
-      render 'toppages/index'
+      render :new
     end
   end
 

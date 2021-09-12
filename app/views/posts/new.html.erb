@@ -5,6 +5,7 @@
   <div class="col-sm-6 offset-sm-3">
 
     <%= form_with(model: @post) do |f| %>
+    <%= render 'layouts/error_messages' %>
     <div class="bg-secondary p-sm-4 my-4 rounded">
       <div class="mb-3">
         <%= f.label :title, 'タイトル' %>
