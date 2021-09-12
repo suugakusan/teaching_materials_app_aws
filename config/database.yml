@@ -49,7 +49,9 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: teaching_materials_app_production
   username: teaching_materials_app
   password: <%= ENV['TEACHING_MATERIALS_APP_DATABASE_PASSWORD'] %>
