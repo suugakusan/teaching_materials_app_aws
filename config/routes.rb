@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   
   get 'signup', to: 'users#new'
   get 'search', to: 'posts#search'
+  get 'subject_search', to: 'posts#subject_search'
   post '/guest', to: 'guest_sessions#create'
   resources :users, only: [:show, :create] do
     member do

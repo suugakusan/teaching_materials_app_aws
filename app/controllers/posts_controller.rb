@@ -44,6 +44,12 @@ class PostsController < ApplicationController
     render "search"
   end
   
+  def subject_search
+    @posts = Post.subject_search(params[:keyword1])
+    @keyword1 = params[:keyword1]
+    render "subject_search"
+  end
+  
   private
 
   def post_params
