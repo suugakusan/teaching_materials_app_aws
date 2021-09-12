@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   mount_uploader :file, FileUploader
   belongs_to :user
   
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
   has_many :favoriteds, through: :favorites, source: :user
   
   validates :content, presence: true, length: { maximum: 255 }
