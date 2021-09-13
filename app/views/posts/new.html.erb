@@ -25,6 +25,7 @@
       <div class="mb-3">
         <%= f.label :file, 'ファイル' %>
         <%= f.file_field :file, class: 'form-control' %>
+        <%= "投稿可能な拡張子(jpg,jpeg,gif,png,docx,xlsx,pptx,txt,pdf)"%>
       </div>
     </div>
       <%= f.submit '投稿', class: 'btn btn-primary w-50' %>

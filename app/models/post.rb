@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   
   validates :content, presence: true, length: { maximum: 255 }
   validates :title, presence: true, length: { maximum: 255 }
-  validates :file, presence: true, length: { maximum: 255 }
+  validates :file, presence: true
   validates :subject_id, presence: true
  
  enum subject_id: {
