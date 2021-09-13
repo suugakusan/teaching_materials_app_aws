@@ -19,6 +19,7 @@
               <%= link_to "削除", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
               <%= link_to "編集", edit_post_path(current_user) , class: 'btn btn-primary btn-sm'%>
             <% end %>
+            <% end %>
             <% if current_user.favoriting?(post) %>
               <%= form_with(model: current_user.favorites.find_by(post_id: post.id), method: :delete) do |f| %>
              　  <%= hidden_field_tag :post_id, post.id %>
