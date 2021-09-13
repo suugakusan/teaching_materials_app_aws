@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   
   validates :content, presence: true, length: { maximum: 255 }
   validates :title, presence: true, length: { maximum: 255 }
-  validates :file, presence: true, length: { maximum: 255 }
+  validates :file, presence: true
   validates :subject_id, presence: true
  
  enum subject_id: {
@@ -29,6 +29,6 @@ class Post < ApplicationRecord
   end
   
   def self.subject_search(keyword)
-     where(["subject_id like?", "%#{keyword}%"])
+     where(["subject_id::text like?", "%#{keyword}%"])
   end
 end
