@@ -25,7 +25,7 @@ class Post < ApplicationRecord
 
 
   def self.search(keyword)
-     where(["title like? OR content like?", "%#{keyword}%", "%#{keyword}%"])
+     where(["title::text like? OR content::text like?", "%#{keyword}%", "%#{keyword}%"])
   end
   
   def self.subject_search(keyword)

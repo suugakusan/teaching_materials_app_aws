@@ -31,7 +31,7 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     if post.update(post_params)
       flash[:success] = '投稿は正常に更新されました'
-      redirect_to root_url
+      redirect_to request.referer
     else
       flash.now[:danger] = '投稿は更新されませんでした'
       render :edit
