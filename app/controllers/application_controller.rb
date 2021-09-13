@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include Pagy::Backend
   
+  
+
   private
 
   def require_user_logged_in
@@ -9,6 +11,13 @@ class ApplicationController < ActionController::Base
       redirect_to login_url
     end
   end
+  
+  def exist_user?
+    unless User.find_by(id: params[:id])
+      redirect_to root_url
+    end
+  end
+  
   
   def counts(user)
     @count_posts = user.posts.count
