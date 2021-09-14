@@ -18,6 +18,9 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def guest_user
+    current_user == User.find_by(email: "guest@exapmle.com")
+  end
   
   def counts(user)
     @count_posts = user.posts.count
