@@ -1,12 +1,16 @@
+
 <div class="search-form">
-  <%= form_with url: search_path, method: :get, local: true do |f| %>
-    <h4><検索フォーム><%= f.text_field :keyword, value: @keyword%>
-  <%= f.submit "検索" %></h4>
-  <% end %>
   <%= form_with url: subject_search_path, method: :get, local: true do |f| %>
-    <h4><教科の選択><%= f.select :keyword1, [['国語', 1], ['社会', 2], ['数学', 3], ['理科', 4], ['英語', 5], ['音楽', 6], ['保体', 7], ['技家', 8], ['美術', 9]], value: @keyword1%>
-  <%= f.submit "検索" %></h4>
+    <h4><教科の選択><%= f.select :keyword1, [['国語', 1], ['社会', 2], ['数学', 3], ['理科', 4], ['英語', 5], ['音楽', 6], ['保体', 7], ['技家', 8], ['美術', 9]], value: @keyword1, class: "form-control"%>
+  <%= f.submit "検索",class: "btn btn-primary"%></h4>
   <% end %>
+   <div class="form-inline">
+     <div class="">
+  <%= form_with url: search_path, method: :get, local: true do |f| %>
+    <h4><検索フォーム><%= f.text_field :keyword, value: @keyword, class: "form-control"%>
+  <%= f.submit "検索" ,class: "btn btn-primary"%></h4>
+  <% end%>
+      </div>
 </div>
 <% if posts.any? %>
   <ul class="list-unstyled">
