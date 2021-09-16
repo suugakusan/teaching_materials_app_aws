@@ -25,6 +25,7 @@
             <p class="text-muted">posted at <%= post.created_at %></p>
           </div>
           <div  class="d-flex">
+        <% unless current_user.email == "guest@exapmle.com"  %>
           <% if current_user == post.user %>
             <%= link_to "削除", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
             <%= link_to "編集", edit_post_path(post) , class: 'btn btn-primary btn-sm'%>
@@ -40,6 +41,7 @@
                　<%= f.submit 'お気に入り登録', class: 'btn btn-primary btn-sm' %>
                <% end %>
             <% end %>
+          <% end %>
           </div>
         </div>
       </li>
