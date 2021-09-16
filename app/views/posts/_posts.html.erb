@@ -33,7 +33,7 @@
                  <%= link_to "編集", edit_post_path(post) , class: 'btn btn-primary btn-sm'%>
                <% end %>
               </div>
-              <div class="col-4">
+              <div class="col-6">
                 <% if current_user.favoriting?(post) %>
                    <%= form_with(model: current_user.favorites.find_by(post_id: post.id), method: :delete) do |f| %>
           　          <%= hidden_field_tag :post_id, post.id %>
