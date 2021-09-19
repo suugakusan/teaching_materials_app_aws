@@ -1,24 +1,17 @@
-# README
+# 教材シェア
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリの特徴
 
-Things you may want to cover:
+## アプリ作成背景
+### URL
+### 機能一覧
+### ER図
+### 使用技術
 
-* Ruby version
+## トップページ
+### 工夫点
+* 
+* 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## いいね機能
+### 工夫点
