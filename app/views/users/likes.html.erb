@@ -6,7 +6,7 @@
     <% @favoritings.each do |favorite| %>
       <li class="col-sm-6 offset-sm-3">
          <div class="border border-primary p-sm-2 my-1 rounded">
-          <div class="text-center">
+          <div class="text-left">
             <p>ユーザー：<%= link_to favorite.user.name, user_path(favorite.user), class: "text-decoration-none" %></p>
             <p>タイトル：<%= favorite.title %>[<%= favorite.subject_id %>]</p>
             <p>内容：<%= favorite.content %></p>
