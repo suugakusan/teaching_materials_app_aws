@@ -8,6 +8,9 @@
  &emsp;そこで、教材を共有する場を提供することができれば、教員が抱える課題の解決の一助になるのではないかと思い制作しました。
 ### URL
 https://teaching-materials-app.herokuapp.com/
+## 工夫した点
+* ユーザーの入力負担を減らすために、教科をセレクトボックスで選択できるよう実装しました。
+* 検索機能を、内容と教科で２つ作成しました。
 ### 機能一覧
 |  |機能  |gem  |
 |:---: |:---: |:---: |
@@ -30,12 +33,5 @@ https://teaching-materials-app.herokuapp.com/
 * インフラ : Heroku
 * ソースコード管理：GitHub
 ### 開発環境
-* OS : windows Lnovo
+* OS : windows Lenovo
 * Visual Studio Code
-## トップページ
-### 工夫点
-* 
-* 
-
-## いいね機能
-### 工夫点
