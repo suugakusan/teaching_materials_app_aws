@@ -1,0 +1,4 @@
+<%= form_with(model: current_user.favorites.build, data: {remote: true}, id: "post-#{post.id}") do |f| %>
+                      <%= hidden_field_tag :post_id,  post.id %>
+                      <%= f.submit 'お気に入り登録', class: 'btn btn-primary btn-sm' %>
+                    <% end %>
