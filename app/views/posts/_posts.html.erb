@@ -1,13 +1,17 @@
+
 <div class="search-form">
-  <%= form_with url: search_path, method: :get, local: true do |f| %>
-    <h4><検索フォーム><%= f.text_field :keyword, value: @keyword %>
-  <%= f.submit "検索" %></h4>
-  <% end %>
   <%= form_with url: subject_search_path, method: :get, local: true do |f| %>
-    <h4><教科の選択><%= f.select :keyword1, [['国語', 1], ['社会', 2], ['数学', 3], ['理科', 4], ['英語', 5], ['音楽', 6], ['保体', 7], ['技家', 8], ['美術', 9]], value: @keyword1%>
-  <%= f.submit "検索" %></h4>
+    <h4><教科の選択><%= f.select :keyword1, [['国語', 1], ['社会', 2], ['数学', 3], ['理科', 4], ['英語', 5], ['音楽', 6], ['保体', 7], ['技家', 8], ['美術', 9]], value: @keyword1, class: "form-control"%>
+  <%= f.submit "検索",class: "btn btn-primary"%></h4>
   <% end %>
-</div>
+   <div class="form-inline">
+     <div>
+       <%= form_with url: search_path, method: :get, local: true do |f| %>
+       <h4><検索フォーム><%= f.text_field :keyword, value: @keyword, class: "form-control"%>
+         <%= f.submit "検索" ,class: "btn btn-primary"%></h4>
+       <% end%>
+     </div>
+   </div>
 <% if posts.any? %>
   <ul class="list-unstyled">
     <% posts.each do |post| %>
@@ -20,22 +24,30 @@
             <p>ファイル：<a href=<%= post.file.url %> download> <%= post.file_identifier %></a></p>
             <p class="text-muted">posted at <%= post.created_at %></p>
           </div>
-          <div  class="d-flex justify-content-center">
-          <% if current_user == post.user %>
-            <%= link_to "削除", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
-            <%= link_to "編集", edit_post_path(post) , class: 'btn btn-primary btn-sm'%>
+          <div  class="container">
+            <div class="row">
+           <% unless current_user.email == "guest@exapmle.com"  %>
+              <div class="col-4">
+               <% if current_user == post.user %>
+                 <%= link_to "削除", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+                 <%= link_to "編集", edit_post_path(post) , class: 'btn btn-primary btn-sm'%>
+               <% end %>
+              </div>
+              <div class="col-6">
+                <% if current_user.favoriting?(post) %>
+                   <%= form_with(model: current_user.favorites.find_by(post_id: post.id), method: :delete) do |f| %>
+          　          <%= hidden_field_tag :post_id, post.id %>
+          　　         <%= f.submit 'お気に入り解除', class: 'btn btn-danger btn-sm' %>
+          　        <% end %>
+                <% else %>
+                   <%= form_with(model: current_user.favorites.build) do |f| %>
+              　      <%= hidden_field_tag :post_id,  post.id %>
+               　     <%= f.submit 'お気に入り登録', class: 'btn btn-primary btn-sm' %>
+                   <% end %>
+                <% end %>
+              </div>
           <% end %>
-          <% if current_user.favoriting?(post) %>
-            <%= form_with(model: current_user.favorites.find_by(post_id: post.id), method: :delete) do |f| %>
-          　  <%= hidden_field_tag :post_id, post.id %>
-          　　<%= f.submit 'お気に入り解除', class: 'btn btn-danger btn-sm' %>
-          　<% end %>
-          <% else %>
-            <%= form_with(model: current_user.favorites.build) do |f| %>
-           　 <%= hidden_field_tag :post_id,  post.id %>
-           　<%= f.submit 'お気に入り登録', class: 'btn btn-primary btn-sm' %>
-            <% end %>
-          <% end %>
+          </div>
           </div>
         </div>
       </li>
