@@ -5,7 +5,7 @@
         <div class="border border-primary p-sm-2 my-1 rounded">
           <div class="text-left">
             <p>ユーザー：<%= link_to post.user.name, user_path(post.user), class: "text-decoration-none" %></p>
-            <p>タイトル：<%= post.title %>  教科：<%= post.subject_id %></p>
+            <p>タイトル：<%= post.title %> [<%= post.subject_id %>]</p>
             <p>内容：<%= post.content %></p>
             <p>ファイル：<a href=<%= post.file.url %> download> <%= post.file_identifier %></a></p>
             <p class="text-muted">posted at <%= post.created_at %></p>
