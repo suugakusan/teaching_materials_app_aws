@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:show, :followings, :follower]
+  before_action :require_user_logged_in, only: [:show, :followings, :follower, :like]
+  before_action :exist_user?, only:[:show]
+  
   def show
     @user = User.find(params[:id])
     @pagy, @posts = pagy(@user.posts.order(id: :desc))
@@ -42,4 +44,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
+  
 end

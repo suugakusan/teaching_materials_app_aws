@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :require_user_logged_in
-  before_action :correct_user, only: [:destroy]
+  before_action :correct_user, only: [:edit, :destroy]
   def new
     @post = Post.new
   end
@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     else
       @pagy, @posts = pagy(current_user.posts.order(id: :desc))
       flash.now[:danger] = 'メッセージの投稿に失敗しました。'
-      render 'toppages/index'
+      render :new
     end
   end
 

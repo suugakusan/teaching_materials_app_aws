@@ -6,5 +6,8 @@ class ToppagesController < ApplicationController
       @user = current_user
       @pagy, @favoritings = pagy(@user.favoritings)
     end
+    
+    
   end
+  
 end
