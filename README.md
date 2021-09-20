@@ -25,10 +25,11 @@ https://teaching-materials-app.herokuapp.com/
 |9  |お気に入り機能  |×  |
 |10  |フォロー機能  |×  |
 ### ER図
+![ER図](https://user-images.githubusercontent.com/87798070/133949142-9b84452c-5945-45e2-8cab-1854cbfff1d7.png)
 ### 使用技術
 * 言語 : Ruby (3.0.0)
 * フレームワーク：Ruby on Rails (6.1.4.1)
-* フロントエンド : HTML&CSS/Bootstrap
+* フロントエンド : HTML&CSS/Bootstrap/JavaScript/SCSS
 * DB : PostgreSQL
 * インフラ : Heroku
 * ソースコード管理：GitHub
