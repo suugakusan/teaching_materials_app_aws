@@ -8,5 +8,9 @@ import Turbolinks from "turbolinks"
 import "channels"
 import "jquery"
 
+var jQuery = require('jquery')
+global.$ = global.jQuery = jQuery;
+window.$ = window.jQuery = jQuery;
+
 Rails.start()
 Turbolinks.start()
