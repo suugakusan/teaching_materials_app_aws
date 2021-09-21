@@ -34,12 +34,8 @@
                     <%= link_to "編集", edit_post_path(post) , class: 'btn btn-primary btn-sm'%>
                   <% end %>
                 </div>
-                <div class="col-6">
-                  <% if current_user.favoriting?(post) %>
-                    <%= render 'favorites/unfavorite', { post: post} %>
-                  <% else %>
-                    <%= render 'favorites/favorite', { post: post }%>
-                  <% end %>
+                <div class="col-6" id="post_<%= post.id %>">
+                  <%= render 'favorites/likebutton', { post: post }%>
                 </div>
               <% end %>
             </div>
