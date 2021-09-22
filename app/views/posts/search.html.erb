@@ -1,9 +1,9 @@
  <div class="text-center">
    <h1>「<%= @keyword%>」の検索結果</h1>
  </div>
- <ul class="list-unstyled">
-   <div class="row text-left">
-     <div class="col-sm-6 offset-sm-3">
+ <div class="row text-left">
+   <div class="col-sm-6 offset-sm-3">
+     <ul class="list-unstyled">
       <% @posts.each do |post| %>
        <li>
          <div class="border border-primary p-sm-2 my-1 rounded">
@@ -22,6 +22,6 @@
         </div>
        </li>
       <% end %>
-     </div>
+     </ul>
     </div>
-  </ul>
+   </div>
