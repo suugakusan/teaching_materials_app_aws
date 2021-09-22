@@ -18,7 +18,7 @@
               <% end %>
              <li class="ms-3"><%= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link' %></li>
              <% unless current_user.email == "guest@exapmle.com"  %>
-             <li class="ms-3"><<%= link_to current_user.name , user_path(current_user), class: 'btn btn-dark' %></li>
+             <li class="ms-3"><%= link_to current_user.name , user_path(current_user), class: 'btn btn-dark' %></li>
              <% end %>
            </ul>
          </div>
