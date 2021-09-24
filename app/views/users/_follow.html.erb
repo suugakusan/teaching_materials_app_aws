@@ -1,0 +1,16 @@
+<div>
+  <ul class="list-unstyled">
+    <% object.each do |follower| %>
+      <li>
+        <div class="p-sm-2 my-2">
+          <div class="text-center">
+            <h4>ユーザー：<%= link_to follower.name, user_path(follower), class: "text-decoration-none" %></h4>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <div class="pagination">
+    <%== pagy_bootstrap_nav(@pagy) %>
+  </div>
+</div>

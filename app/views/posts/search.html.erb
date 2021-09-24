@@ -1,31 +1,4 @@
  <div class="text-center">
    <h1>「<%= @keyword%>」の検索結果</h1>
  </div>
- <div class="row text-left">
-   <div class="col-sm-6 offset-sm-3">
-     <ul class="list-unstyled">
-       <% if @posts.any? %>
-         <% @posts.each do |post| %>
-           <li>
-             <div class="border border-primary p-sm-2 my-1 rounded">
-               <div class="text-left">
-                 <p>ユーザー：<%= link_to post.user.name, user_path(post.user), class: "text-decoration-none" %></p>
-                 <p>タイトル：<%= post.title %>[<%= post.subject_id %>]</p>
-                 <p>内容：<%= post.content %></p>
-                 <p>ファイル：<a href=<%= post.file.url %> download> <%= post.file_identifier %></a></p>
-                 <p class="text-muted">posted at <%= post.created_at %></p>
-               </div>
-             <% unless current_user.email == "guest@exapmle.com"  %>
-               <div  class="d-flex justify-content-center" id="post_<%= post.id %>">
-                 <%= render 'favorites/likebutton', { post: post }%>
-               </div>
-             <% end %>
-            </div>
-           </li>
-          <% end %>
-        <% else %>
-          <li id="nopost">該当する投稿はありません<li>
-        <% end %>
-       </ul>
-     </div>
-   </div>
+ <%= render 'posts/search', posts: @posts %>
