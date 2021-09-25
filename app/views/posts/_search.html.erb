@@ -4,7 +4,7 @@
       <% if posts.any? %>
         <% posts.each do |post| %>
           <li>
-            <div class="border border-primary p-sm-2 my-1 rounded">
+            <div class="border border-primary p-sm-2 mx-2 p-2 rounded">
               <div class="text-left">
                 <p>ユーザー：<%= link_to post.user.name, user_path(post.user), class: "text-decoration-none" %></p>
                 <p>タイトル：<%= post.title %>[<%= post.subject_id %>]</p>
