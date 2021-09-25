@@ -9,12 +9,12 @@
      <div class="bg-secondary p-sm-4 m-4 p-2 rounded">
       <div class="m-3">
         <%= f.label :email, 'メールアドレス' %>
-        <%= f.email_field :email, class: 'form-control' %>
+        <%= f.email_field :email, class: 'form-control', required: true %>
       </div>
 
       <div class="m-3">
         <%= f.label :password, 'パスワード' %>
-        <%= f.password_field :password, class: 'form-control' %>
+        <%= f.password_field :password, class: 'form-control', required: true %>
       </div>
      </div>
       <%= f.submit 'ログイン', class: 'btn btn-primary w-50' %>

@@ -6,7 +6,7 @@
     <div class="bg-secondary p-sm-4 m-4 rounded">
       <div class="m-3 p-3">
         <%= f.label :title, 'タイトル' %>
-        <%= f.text_field :title, class: 'form-control' %>
+        <%= f.text_field :title, class: 'form-control', required: true %>
       </div>
 
       <div class="m-3">
@@ -16,7 +16,7 @@
 
       <div class="m-3">
         <%= f.label :content, '内容' %>
-        <%= f.text_area :content, class: 'form-control' %>
+        <%= f.text_area :content, class: 'form-control', required: true %>
       </div>
 
       <div class="m-3">
