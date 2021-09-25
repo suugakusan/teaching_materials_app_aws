@@ -6,23 +6,23 @@
 
     <%= form_with(model: @user) do |f| %>
      <%= render 'layouts/error_messages', model: f.object %>
-    <div class="bg-secondary p-sm-4 my-4 rounded">
-      <div class="mb-3">
+    <div class="bg-secondary p-sm-4 m-4 p-2 rounded">
+      <div class="m-3">
         <%= f.label :name, '名前' %>
         <%= f.text_field :name, class: 'form-control' %>
       </div>
 
-      <div class="mb-3">
+      <div class="m-3">
         <%= f.label :email, 'メールアドレス' %>
         <%= f.email_field :email, class: 'form-control' %>
       </div>
 
-      <div class="mb-3">
+      <div class="m-3">
         <%= f.label :password, 'パスワード' %>
         <%= f.password_field :password, class: 'form-control' %>
       </div>
 
-      <div class="mb-3">
+      <div class="m-3">
         <%= f.label :password_confirmation, 'パスワード(確認)' %>
         <%= f.password_field :password_confirmation, class: 'form-control' %>
       </div>

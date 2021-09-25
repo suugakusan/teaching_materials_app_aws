@@ -2,7 +2,7 @@
   <ul class="list-unstyled">
     <% posts.each do |post| %>
       <li>
-        <div class="border border-primary p-sm-2 my-1 rounded">
+        <div class="border border-primary p-sm-2 mx-2 p-2 rounded">
           <div class="text-left">
             <p>ユーザー：<%= link_to post.user.name, user_path(post.user), class: "text-decoration-none" %></p>
             <p>タイトル：<%= post.title %>[<%= post.subject_id %>]</p>
@@ -13,7 +13,7 @@
           <div  class="container">
            <div class="row">
            <% unless current_user.email == "guest@exapmle.com"  %>
-              <div class="col-4">
+              <div class="col-6">
                <% if current_user == post.user %>
                  <%= link_to "削除", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
                  <%= link_to "編集", edit_post_path(post) , class: 'btn btn-primary btn-sm'%>

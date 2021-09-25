@@ -1,4 +1,4 @@
-<div class="search-form">
+<div class="search-form m-2">
   <%= form_with url: subject_search_path, method: :get, local: true do |f| %>
     <h4>&lt;教科の選択><%= f.select :keyword1, [['国語', 1], ['社会', 2], ['数学', 3], ['理科', 4], ['英語', 5], ['音楽', 6], ['保体', 7], ['技家', 8], ['美術', 9]], value: @keyword1, class: "form-control"%>
   <%= f.submit "検索",class: "btn btn-primary"%></h4>
@@ -6,7 +6,7 @@
    <div class="form-inline">
      <div>
        <%= form_with url: search_path, method: :get, local: true do |f| %>
-       <h4>&lt;検索フォーム><%= f.text_field :keyword, value: @keyword, class: "form-control"%>
+       <h4>&lt;検索><%= f.text_field :keyword, value: @keyword, class: "form-control"%>
          <%= f.submit "検索" ,class: "btn btn-primary"%></h4>
        <% end%>
      </div>
