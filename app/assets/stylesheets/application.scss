@@ -22,7 +22,8 @@ input[type="text"] {
         display: inline;
     }
 body{ 
-    padding-top: 60px; 
+    padding-top: 60px;
+    background-color: #e8dab2;   
 }
 
 #nopost{
@@ -30,4 +31,36 @@ body{
     padding-top:10px;
     font-size:30px;
     color:red;
+}
+
+#topimage{
+  text-align: center;
+}
+
+.text{
+  padding: 40px 20px 10px;
+}
+
+.title{
+  padding-top: 20px;
+  font-size: 20px;
+  line-height: 40px;
+}
+
+#content-color{
+  background-color: #eaeaea;
+}
+
+#btnp{
+  margin: 0 30px;
+}
+
+.leftcontent{
+  font-size: 18px;
+  text-align: end;
+}
+
+.text2{
+  text-align: center;
+  padding-top: 135px;
 }
