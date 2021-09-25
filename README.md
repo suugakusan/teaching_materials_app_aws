@@ -21,12 +21,12 @@ https://teaching-materials-app.herokuapp.com/
 |1  |ログイン・ログアウト  |×  |
 |2  |アカウント登録  |×  |
 |3  |教材検索 |×  |
-|4  |教材投稿  |×  |
+|4  |教材投稿  |carrierwave  |
 |5  |ページネーション |pagy  |
 |6  |レスポンシブ  |Bootstrap  |
 |7  |ゲストログイン  |×  |
 |8  |記事投稿機能(CRUD)  |×  |
-|9  |お気に入り機能  |×  |
+|9  |お気に入り機能(非同期)  |×  |
 |10  |フォロー機能  |×  |
 ### ER図
 ![ER図](https://user-images.githubusercontent.com/87798070/133949142-9b84452c-5945-45e2-8cab-1854cbfff1d7.png)
