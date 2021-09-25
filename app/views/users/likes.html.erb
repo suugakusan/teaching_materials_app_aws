@@ -5,7 +5,7 @@
   <ul class="list-unstyled mt-2">
     <% @favoritings.each do |favorite| %>
       <li class="col-sm-6 offset-sm-3">
-         <div class="border border-primary p-sm-2 mx-2 p-2 rounded">
+         <div class="border border-primary p-sm-2 mx-2 p-2 rounded" id="content-color">
           <div class="text-left">
             <p>ユーザー：<%= link_to favorite.user.name, user_path(favorite.user), class: "text-decoration-none" %></p>
             <p>タイトル：<%= favorite.title %>[<%= favorite.subject_id %>]</p>
