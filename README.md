@@ -35,8 +35,8 @@ https://teaching-materials-app.herokuapp.com/
 * フレームワーク：Ruby on Rails (6.1.4.1)
 * フロントエンド : HTML&CSS/Bootstrap/JavaScript/SCSS
 * DB : PostgreSQL
-* インフラ : Heroku
-* ソースコード管理：GitHub
+* インフラ : Heroku(ステージング環境→本番環境)+AWS(S3)
+* ソースコード管理：GitHub(Projectsのカンバン方式でタスクを管理)
 ### 開発環境
 * OS : windows Lenovo
 * Visual Studio Code
