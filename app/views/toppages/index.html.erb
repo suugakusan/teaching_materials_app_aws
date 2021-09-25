@@ -5,13 +5,36 @@
     </div>
   </div>
 <% else %>
-　<div class="bg-success col-sm-8 offset-sm-2 p-3 p-sm-5 rounded">
-  　<div class="text-center text-white">
-   　 <h1>教材をみんなで共有できるサービスです</h1>
-      　<div class="mt-5 ">
-      　  <%= link_to '使ってみる', signup_path, class: 'btn btn-lg btn-primary' %>
-      　</div>
-  　</div>
-　</div>
+　<div class="container">
+    <div class="row mb-5">
+      <div class="col-sm-6" id="topimage">
+        <%= image_tag 'mathematics-pana.png', :size =>'400x300' %>
+      </div>    
+      <div class="col-sm-6">
+        <div class="text">
+          <h2>「生徒と向き合う時間」のために</h2>
+          <p class="title">授業に役立つプリントや教具を共有し合い、効率よく授業の準備をできるようにしよう。<br>
+            多忙な教員の手助けをするアプリです。
+             </p>
+        </div>
+        <div class="text-center text-lg-start">
+          <%= link_to "はじめる", signup_path, class: 'btn btn-primary', id: "btnp"%>
+          <%= link_to "ゲストログイン", guest_path, method: :post, class: 'btn btn-danger' %>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-sm-6">
+        <div class="text2">
+          <h2>検索機能</h2>
+          <p class="title">教科で検索することも、投稿内容で検索することもできます<br>
+          登録すれば、フォロー機能とお気に入り機能が使えます。 </p>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <%= image_tag '教材検索.png', :size =>'500x400' %>
+      </div>
+    </div>
+  </div>
 <% end %>
 
