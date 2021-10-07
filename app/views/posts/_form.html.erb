@@ -22,6 +22,7 @@
       <div class="m-3">
         <%= f.label :file, 'ファイル' %>
         <%= f.file_field :file, class: 'form-control' %>
+        <%= f.hidden_field :file_cache %>
         <%= "投稿可能な拡張子(jpg,jpeg,gif,png,docx,xlsx,pptx,txt,pdf)"%>
       </div>
     </div>
