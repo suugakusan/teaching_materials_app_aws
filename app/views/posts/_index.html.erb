@@ -11,19 +11,17 @@
             <p class="text-muted">posted at <%= post.created_at %></p>
           </div>
           <div  class="container">
-           <div class="row">
-           <% unless current_user.email == "guest@exapmle.com"  %>
+            <div class="row">
               <div class="col-6">
-               <% if current_user == post.user %>
-                 <%= link_to "削除", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm'%>
-                 <%= link_to "編集", edit_post_path(post) , class: 'btn btn-primary btn-sm'%>
-               <% end %>
+                <% if current_user == post.user %>
+                  <%= link_to "削除", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm'%>
+                  <%= link_to "編集", edit_post_path(post) , class: 'btn btn-primary btn-sm'%>
+                <% end %>
               </div>
               <div class="col-6" id="post_<%= post.id %>">
-                 <%= render 'favorites/likebutton', { post: post }%>
+                <%= render 'favorites/likebutton', { post: post }%>
               </div>
-           <% end %>
-           </div>
+            </div>
           </div>
         </div>
       </li>

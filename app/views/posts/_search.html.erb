@@ -12,11 +12,9 @@
                 <p>ファイル：<a href=<%= post.file.url %> download> <%= post.file_identifier %></a></p>
                 <p class="text-muted">posted at <%= post.created_at %></p>
               </div>
-              <% unless current_user.email == "guest@exapmle.com"  %>
-                <div  class="d-flex justify-content-center" id="post_<%= post.id %>">
-                  <%= render 'favorites/likebutton', { post: post }%>
-                </div>
-              <% end %>
+              <div  class="d-flex justify-content-center" id="post_<%= post.id %>">
+                <%= render 'favorites/likebutton', { post: post }%>
+              </div>
             </div>
           </li>
         <% end %>
