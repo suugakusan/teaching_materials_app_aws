@@ -12,7 +12,7 @@
          <div class="btn-group">
            <ul class="navbar-nav">
              <li class="ms-3"><%= link_to '投稿', new_post_path, class: 'nav-link' %></li>
-             <li class="ms-3"><%= link_to 'お気に入り一覧', likes_user_path(current_user), class: 'nav-link' %></li>
+             <li class="ms-3"><%= link_to 'お気に入り', likes_user_path(current_user), class: 'nav-link' %></li>
              <li class="ms-3"><%= link_to 'フォロー', followings_user_path(current_user), class: 'nav-link' %></li>
              <li class="ms-3"><%= link_to 'フォロワー', followers_user_path(current_user), class: 'nav-link' %></li>
              <li class="ms-3"><%= link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link' %></li>
