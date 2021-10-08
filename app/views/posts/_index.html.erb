@@ -8,7 +8,7 @@
             <p>タイトル：<%= post.title %>[<%= post.subject_id %>]</p>
             <p>内容：<%= post.content %></p>
             <p>ファイル：<a href=<%= post.file.url %> download> <%= post.file_identifier %></a></p>
-            <p class="text-muted">posted at <%= post.created_at %></p>
+            <p class="text-muted">  投稿日時： <%= post.created_at.to_s(:datetime) %></p>
           </div>
           <div  class="container">
             <div class="row">
