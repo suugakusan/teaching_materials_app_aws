@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_10_233437) do
+ActiveRecord::Schema.define(version: 2021_10_08_120103) do
 
   create_table "favorites", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -49,6 +49,10 @@ ActiveRecord::Schema.define(version: 2021_09_10_233437) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
+    t.text "profile"
+    t.integer "prefecture_id"
+    t.integer "school_id"
   end
 
   add_foreign_key "favorites", "posts"
