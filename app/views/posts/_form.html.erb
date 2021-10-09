@@ -26,8 +26,9 @@
         <%= "投稿可能な拡張子(jpg,jpeg,gif,png,docx,xlsx,pptx,txt,pdf)"%>
       </div>
     </div>
-      <%= f.submit '投稿', class: 'btn btn-primary w-50' %>
+      <%= f.submit '投稿', class: 'btn btn-primary w-75' %>
     <% end %>
+      <%= link_to "キャンセル",:back, class: "btn btn-secondary w-75 m-4", data: { confirm: "投稿データを破棄しますか？" } %>
    </div>
  </div>
  
