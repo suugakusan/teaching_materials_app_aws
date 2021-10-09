@@ -14,7 +14,6 @@ Rails.application.routes.draw do
       get :followings
       get :followers
       get :likes
-      get :mypost
     end
   end
   resources :favorites, only: [:create, :destroy]
