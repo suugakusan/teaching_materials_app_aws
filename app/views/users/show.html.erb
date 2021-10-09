@@ -6,10 +6,10 @@
   <div class="col-sm-6 offset-sm-3">
     <div class="row justify-content-center">
       <div class="col-3 border border-primary p-2"  id="content-color">
-            <%= image_tag 'teacher.png' , class:'image'%>
+          <%= image_tag @user.image.url, class: "image" %>
         </div>
         <div class="col-7 border border-primary p-2 rounded" id="content-color">
-      <div class="text-left">
+        <div class="text-left">
             <p>出身地：<%= @user.prefecture_id %></p>
             <p>校種：<%= @user.school_id %></p>
             <p>自己紹介：<%= @user.profile %></p>

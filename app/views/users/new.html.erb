@@ -23,6 +23,11 @@
       </div>
       
       <div class="m-3">
+        <%= f.label :image, 'アイコン画像' %>
+        <%= f.file_field :image, class: 'form-control form-height'%>
+      </div>
+      
+      <div class="m-3">
         <%= f.label :profile, '自己紹介' %>
         <%= f.text_area :profile, class: 'form-control w-100 form-profile-height', required: true %>
       </div>
