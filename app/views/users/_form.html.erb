@@ -1,0 +1,41 @@
+<div class="bg-secondary p-sm-2 m-3 p-2 rounded">
+      <div class="m-3 form">
+        <%= f.label :name, '名前' %>
+        <%= f.text_field :name, class: 'form-control w-100 form-height', required: true %>
+      </div>
+      
+      <div class="m-3">
+        <%= f.label :prefecture_id, '都道府県' %>
+        <%= f.select :prefecture_id, User.prefecture_ids.keys, class: 'form-control form-height', required: true%>
+      </div>
+      
+      <div class="m-3">
+        <%= f.label :school_id, '校種' %>
+        <%= f.select :school_id, User.school_ids.keys, class: 'form-control form-height', required: true%>
+      </div>
+      
+      <div class="m-3">
+        <%= f.label :image, 'アイコン画像' %>
+        <%= f.file_field :image, class: 'form-control form-height'%>
+      </div>
+      
+      <div class="m-3">
+        <%= f.label :profile, '自己紹介' %>
+        <%= f.text_area :profile, class: 'form-control w-100 form-profile-height', required: true %>
+      </div>
+
+      <div class="m-3">
+        <%= f.label :email, 'メールアドレス' %>
+        <%= f.email_field :email, class: 'form-control form-height', required: true %>
+      </div>
+
+      <div class="m-3">
+        <%= f.label :password, 'パスワード' %>
+        <%= f.password_field :password, class: 'form-control form-height', required: true %>
+      </div>
+
+      <div class="m-3">
+        <%= f.label :password_confirmation, 'パスワード(確認)' %>
+        <%= f.password_field :password_confirmation, class: 'form-control form-height', required: true%>
+      </div>
+    </div>

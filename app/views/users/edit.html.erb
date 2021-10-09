@@ -1,5 +1,5 @@
 <div class="text-center">
-  <h1>新規登録</h1>
+  <h1>プロフィール編集画面 </h1>
 </div>
 <div class="row">
   <div class="col-sm-6 offset-sm-3">
@@ -7,13 +7,11 @@
       <%= render 'layouts/error_messages', model: f.object %>
       <%= render "form", f: f %>
       <div class="text-center">
-        <%= f.submit '新規登録', class: 'btn btn-primary w-75 mb-4' %>
+        <%= f.submit '更新', class: 'btn btn-primary w-75 mb-4' %>
       </div>
     <% end %>
     <div class="text-center">
-      <%= link_to 'ログイン', login_path, class: 'btn btn-secondary w-75 mb-4' %>
-      <%= link_to "ゲストログイン", guest_path, method: :post, class: 'btn btn-success w-75 mb-4' %>
+      <%= link_to "キャンセル",:back, class: "btn btn-secondary w-75 m-4", data: { confirm: "更新せずに終了しますか？" } %>
     </div>
   </div>
 </div>
- 
