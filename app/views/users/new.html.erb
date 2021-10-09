@@ -43,9 +43,12 @@
       </div>
     </div>
     <div class="text-center">
-      <%= f.submit '新規登録', class: 'btn btn-primary w-75 mb-5' %>
+      <%= f.submit '新規登録', class: 'btn btn-primary w-75 mb-4' %>
     </div>
     <% end %>
-    
+    <div class="text-center">
+      <%= link_to 'ログイン', login_path, class: 'btn btn-secondary w-75 mb-4' %>
+      <%= link_to "ゲストログイン", guest_path, method: :post, class: 'btn btn-success w-75 mb-4' %>
+    </div>
    </div>
  </div>
