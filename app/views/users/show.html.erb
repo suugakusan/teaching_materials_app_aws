@@ -6,7 +6,11 @@
   <div class="col-sm-6 offset-sm-3">
     <div class="row justify-content-center">
       <div class="col-3 border border-primary p-2"  id="content-color">
-            <%= image_tag 'teacher.png' , class:'image'%>
+        <% if @user.image == nil %>
+          <%= image_tag 'teacher.png', class: "image" %>
+        <% else %>
+          <%= image_tag(@user.image.url)  %>
+        <% end %>
         </div>
         <div class="col-7 border border-primary p-2 rounded" id="content-color">
       <div class="text-left">
