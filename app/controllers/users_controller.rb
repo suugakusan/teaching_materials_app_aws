@@ -2,12 +2,6 @@ class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:show, :followings, :follower, :like]
   before_action :exist_user?, only:[:show]
   
-  def mypost
-    @user = User.find(params[:id])
-    @pagy, @posts = pagy(@user.posts.order(id: :desc))
-    @favoritings = @user.favoritings
-  end
-  
   def show
     @user = User.find(params[:id])
     @pagy, @posts = pagy(@user.posts.order(id: :desc))
