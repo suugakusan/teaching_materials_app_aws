@@ -9,11 +9,12 @@ Rails.application.routes.draw do
   get 'search', to: 'posts#search'
   get 'subject_search', to: 'posts#subject_search'
   post '/guest', to: 'guest_sessions#create'
-  resources :users, only: [:show, :create] do
+  resources :users, only: [:edit, :show, :create] do
     member do
       get :followings
       get :followers
       get :likes
+      get :mypost
     end
   end
   resources :favorites, only: [:create, :destroy]
