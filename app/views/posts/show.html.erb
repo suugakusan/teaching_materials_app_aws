@@ -1,0 +1,22 @@
+<div class="text-center">
+  <h1>投稿詳細画面</h1>
+</div>
+<div class="row">
+  <div class="col-sm-8 offset-sm-2">
+    <div class="row justify-content-center">
+      <div class="col-3 border border-primary p-2"  id="content-color">
+          <%= image_tag @post.user.image.url, class: "image" %>
+        </div>
+        <div class="col-7 border border-primary p-2 rounded" id="content-color">
+        <div class="text-left">
+          <p>校種：<%= @post.schooltype %>　　　学年：<%= @post.grade %></p>
+          <p>教科書：<%= @post.schoolbook %></p>
+          <p><%= @post.subject_id %></p>
+          <p><%= @post.title %></p>
+          <p><%= @post.content %></p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
