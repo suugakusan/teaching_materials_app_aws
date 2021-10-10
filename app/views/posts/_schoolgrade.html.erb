@@ -1,9 +1,9 @@
-<div class="m-3 school_grade" id="elementary_school_grade">
+<div class="m-3 school_grade col-3" id="elementary_school_grade">
   <%= f.label :grade, '学年' %>
   <%= f.select :grade, Post.elementary_grades.keys , class: 'form-control' %>
 </div>
 
-<div class="m-3 school_grade" id="school_grade">
+<div class="m-3 school_grade col-3" id="school_grade">
   <%= f.label :grade, '学年' %>
   <%= f.select :grade, Post.grades.keys , class: 'form-control' %>
 </div>
