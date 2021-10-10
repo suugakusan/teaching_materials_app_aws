@@ -16,36 +16,24 @@ Rails.start()
 Turbolinks.start()
 /*global $*/
 
+
+
 $(function() {
   $('#school_type').change(function() {
     let text = $("#school_type option:selected").val();
+    let school_grade = $('#school_grade').detach();
+    let subject_select = $('#subject_select').detach();
+    let elementary_school_grade = $('#elementary_school_grade').detach();
+    let elementary_subject_select = $('#elementary_subject_select').detach();
     if ( text == "小学校" ){
-    　$('.school_grade').hide();
-    　$('.school_subject').hide();
-      $('.subjectbook').hide();
-      $('#elementary_school_grade').fadeIn();
-      $('#elementary_subject_select').fadeIn();
-      $('#subject_select').hide();
+      
+    
     } else if( text == "中学校") {
-      $('.school_grade').hide();
-      $('.school_subject').hide();
-      $('.subjectbook').hide();
-      $('#school_grade').fadeIn();
-      $('#subject_select').fadeIn();
-      $('#elementary_subject_select').hide();
+      $('render').append(elementary_school_grade); 
     } else if( text == "高校") {
-      $('.school_grade').hide();
-      $('.school_subject').hide();
-      $('.subjectbook').hide();
-      $('#school_grade').fadeIn();
-      $('#subject_select').fadeIn();
-      $('#elementary_subject_select').hide();
+      
     } else if( text == "未選択") {
-      $('.school_grade').hide();
-      $('.school_subject').hide();
-      $('.subjectbook').hide();
-      $('#elementary_subject_select').hide();
-      $('#subject_select').hide();
+      
     }
   });
 
@@ -57,6 +45,7 @@ $(function() {
     let subjecttext = $("#subject_select  option:selected").val();
     if ( subjecttext == "国語"){
     　$('.subjectbook').hide();
+    　$('#school_type').append('#japanesebooks');
       $('#japanesebooks').fadeIn();
     } else if ( subjecttext == "社会") {
       $('.subjectbook').hide();

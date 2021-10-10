@@ -1,14 +1,14 @@
 class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true
   
-  enum schooltype:{
+  enum schooltype: {
     未選択: 0,
     小学校: 1,
     中学校: 2,
     高校: 3
   }, _suffix: true
   
-  enum elementary_grade: {
+  enum grade: {
     未選択: 0,
     学年共通: 1,
     １年: 2,
@@ -19,13 +19,13 @@ class ApplicationRecord < ActiveRecord::Base
     ６年: 7,
   }, _suffix: true
   
-  enum grade: {
-    未選択: 0,
-    学年共通: 1,
-    １年: 2,
-    ２年: 3,
-    ３年: 4,
-  }, _suffix: true
+  def self.elementary_grade
+    grades
+  end
+  
+  def self.junior_grade
+    grades.except(:４年, :５年, :６年)
+  end
   
   enum subject_id: {
     未選択: 0,
@@ -127,8 +127,6 @@ class ApplicationRecord < ActiveRecord::Base
     中学校: 2,
     高校: 3
   }, _suffix: true
-  
-  
   
   enum japanesebook: {
     未選択: 20,

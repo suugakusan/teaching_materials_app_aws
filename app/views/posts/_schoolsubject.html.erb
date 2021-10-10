@@ -1,9 +1,9 @@
-<div class="m-3 col-2" id="elementary_subject_select">
+<div class="m-3 col-2 school_subject" id="elementary_subject_select">
   <%= f.label :subject_id, '教科' %>
   <%= f.select :subject_id, Post.elementary_subject_ids.keys , class: 'form-control' %>
 </div>
 
-<div class="m-3 col-2" id="subject_select">
+<div class="m-3 col-2 school_subject" id="subject_select">
   <%= f.label :subject_id, '教科' %>
   <%= f.select :subject_id, Post.junior_subject_ids.keys , class: 'form-control' %>
 </div>
