@@ -8,16 +8,15 @@
         <%= f.label :title, 'タイトル' %>
         <%= f.text_field :title, class: 'form-control form-height w-100', required: true %>
       </div>
-
-      <div class="m-3">
-        <%= f.label :grade, '学年' %>
-        <%= f.select :grade, Post.grades.keys , class: 'form-control' %>
+      
+      <div class="m-3" id="school_type">
+        <%= f.label :schooltype, '校種' %>
+        <%= f.select :schooltype, Post.schooltypes.keys , class: 'form-control' %>
       </div>
       
-      <div class="m-3" id="area">
-        <%= f.label :subject_id, '教科' %>
-        <%= f.select :subject_id, Post.subject_ids.keys , class: 'form-control' %>
-      </div>
+      <%= render "schoolgrade", f: f %>
+      
+      <%= render "schoolsubject", f: f %>
       
       <%= render "schoolbook", f: f %>
       

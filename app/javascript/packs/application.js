@@ -17,8 +17,35 @@ Turbolinks.start()
 /*global $*/
 
 $(function() {
-  $('#area').change(function() {
-    let text = $("#area option:selected").val();
+  $('#school_type').change(function() {
+    let text = $("#school_type option:selected").val();
+    if ( text == "小学校" ){
+    　$('.school_grade').hide();
+    　$('.school_subject').hide();
+      $('#elementary_school_grade').fadeIn();
+      $('#elementary_subject_select').fadeIn();
+    } else if( text == "中学校") {
+      $('.school_grade').hide();
+      $('.school_subject').hide();
+      $('#school_grade').fadeIn();
+      $('#subject_select').fadeIn();
+    } else if( text == "高校") {
+      $('.school_grade').hide();
+      $('.school_subject').hide();
+      $('#school_grade').fadeIn();
+      $('#subject_select').fadeIn();
+    } else if( text == "未選択") {
+      $('.school_grade').hide();
+      $('.school_subject').hide();
+    }
+  });
+
+});
+
+
+$(function() {
+  $('.school_subject').change(function() {
+    let text = $(".school_subject option:selected").val();
     
     if ( text == "国語"){
     　$('.subjectbook').hide();
@@ -47,6 +74,17 @@ $(function() {
     } else if ( text == "英語") {
       $('.subjectbook').hide();
       $('#englishbooks').fadeIn();
+    } else if ( text == "生活") {
+      $('.subjectbook').hide();
+      $('#lifebooks').fadeIn();
+    } else if ( text == "図画工作") {
+      $('.subjectbook').hide();
+      $('#drawingbooks').fadeIn();
+    } else if ( text == "家庭") {
+      $('.subjectbook').hide();
+      $('#homebooks').fadeIn();
+    } else if ( text == "未選択") {
+      $('.subjectbook').hide();
     }
   });
 
