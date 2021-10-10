@@ -24,19 +24,23 @@ $(function() {
     　$('.school_subject').hide();
       $('#elementary_school_grade').fadeIn();
       $('#elementary_subject_select').fadeIn();
+      $('.subjectbook').hide();
     } else if( text == "中学校") {
       $('.school_grade').hide();
       $('.school_subject').hide();
       $('#school_grade').fadeIn();
       $('#subject_select').fadeIn();
+      $('.subjectbook').hide();
     } else if( text == "高校") {
       $('.school_grade').hide();
       $('.school_subject').hide();
       $('#school_grade').fadeIn();
       $('#subject_select').fadeIn();
+      $('.subjectbook').hide();
     } else if( text == "未選択") {
       $('.school_grade').hide();
       $('.school_subject').hide();
+      $('.subjectbook').hide();
     }
   });
 
@@ -45,45 +49,48 @@ $(function() {
 
 $(function() {
   $('.school_subject').change(function() {
-    let text = $(".school_subject option:selected").val();
+    let subjecttext = $(".school_subject option:selected").val();
     
-    if ( text == "国語"){
+    if ( subjecttext == "国語"){
     　$('.subjectbook').hide();
       $('#japanesebooks').fadeIn();
-    } else if ( text == "社会") {
+    } else if ( subjecttext == "社会") {
       $('.subjectbook').hide();
       $('#societybooks').fadeIn();
-    } else if ( text == "数学") {
+    } else if ( subjecttext == "数学") {
       $('.subjectbook').hide();
       $('#mathbooks').fadeIn();
-    } else if ( text == "理科") {
+    } else if ( subjecttext == "算数") {
+      $('.subjectbook').hide();
+      $('#mathbooks').fadeIn();
+    } else if ( subjecttext == "理科") {
       $('.subjectbook').hide();
       $('#sciencebooks').fadeIn();
-    } else if ( text == "音楽") {
+    } else if ( subjecttext == "音楽") {
       $('.subjectbook').hide();
       $('#musicbooks').fadeIn();
-    } else if ( text == "美術") {
+    } else if ( subjecttext == "美術") {
       $('.subjectbook').hide();
       $('#artbooks').fadeIn();
-    } else if ( text == "保体") {
+    } else if ( subjecttext == "保体") {
       $('.subjectbook').hide();
       $('#pebooks').fadeIn();
-    } else if ( text == "技家") {
+    } else if ( subjecttext == "技家") {
       $('.subjectbook').hide();
       $('#technologybooks').fadeIn();
-    } else if ( text == "英語") {
+    } else if ( subjecttext == "英語") {
       $('.subjectbook').hide();
       $('#englishbooks').fadeIn();
-    } else if ( text == "生活") {
+    } else if ( subjecttext == "生活") {
       $('.subjectbook').hide();
       $('#lifebooks').fadeIn();
-    } else if ( text == "図画工作") {
+    } else if ( subjecttext == "図画工作") {
       $('.subjectbook').hide();
       $('#drawingbooks').fadeIn();
-    } else if ( text == "家庭") {
+    } else if ( subjecttext == "家庭") {
       $('.subjectbook').hide();
       $('#homebooks').fadeIn();
-    } else if ( text == "未選択") {
+    } else if ( subjecttext == "未選択") {
       $('.subjectbook').hide();
     }
   });

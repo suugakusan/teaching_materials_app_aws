@@ -4,6 +4,7 @@
       <%= f.label :title, 'タイトル' %>
       <%= f.text_field :title, class: 'form-control form-height w-100', required: true %>
     </div>
+    
     <div class="m-3" id="school_type">
 　    <%= f.label :schooltype, '校種' %>
       <%= f.select :schooltype, Post.schooltypes.keys , class: 'form-control' %>
