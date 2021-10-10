@@ -14,3 +14,40 @@ window.$ = window.jQuery = jQuery;
 
 Rails.start()
 Turbolinks.start()
+/*global $*/
+
+$(function() {
+  $('#area').change(function() {
+    let text = $("#area option:selected").val();
+    
+    if ( text == "国語"){
+    　$('.subjectbook').hide();
+      $('#japanesebooks').fadeIn();
+    } else if ( text == "社会") {
+      $('.subjectbook').hide();
+      $('#societybooks').fadeIn();
+    } else if ( text == "数学") {
+      $('.subjectbook').hide();
+      $('#mathbooks').fadeIn();
+    } else if ( text == "理科") {
+      $('.subjectbook').hide();
+      $('#sciencebooks').fadeIn();
+    } else if ( text == "音楽") {
+      $('.subjectbook').hide();
+      $('#musicbooks').fadeIn();
+    } else if ( text == "美術") {
+      $('.subjectbook').hide();
+      $('#artbooks').fadeIn();
+    } else if ( text == "保体") {
+      $('.subjectbook').hide();
+      $('#pebooks').fadeIn();
+    } else if ( text == "技家") {
+      $('.subjectbook').hide();
+      $('#technologybooks').fadeIn();
+    } else if ( text == "英語") {
+      $('.subjectbook').hide();
+      $('#englishbooks').fadeIn();
+    }
+  });
+
+});
