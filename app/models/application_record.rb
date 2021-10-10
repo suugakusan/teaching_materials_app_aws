@@ -3,6 +3,7 @@ class ApplicationRecord < ActiveRecord::Base
   
   
   enum subject_id: {
+    未選択: 0,
     国語: 1,
     社会: 2,
     数学: 3,
@@ -12,7 +13,7 @@ class ApplicationRecord < ActiveRecord::Base
     保体: 7,
     技家: 8,
     美術: 9
-  }
+  }, _suffix: true
   
   enum prefecture_id: {
     北海道: 1,
@@ -90,13 +91,15 @@ class ApplicationRecord < ActiveRecord::Base
   }
   
   enum japanesebook: {
+    未選択: 20,
     東京書籍: 0,
     三省堂: 1,
     教育出版: 2,
     光村図書出版: 3
-  }
+  }, _suffix: true
   
   enum societybook: {
+    未選択: 20,
     東京書籍: 0,
     教育出版: 2,
     帝国書院: 4,
@@ -105,9 +108,10 @@ class ApplicationRecord < ActiveRecord::Base
     自由社: 7,
     育鵬社: 8,
     清水書院: 9,
-  }
+  }, _suffix: true
   
   enum mathbook: {
+    未選択: 20,
     東京書籍: 0,
     大日本図書: 10,
     学校図書: 11,
@@ -118,40 +122,46 @@ class ApplicationRecord < ActiveRecord::Base
   }
   
   enum sciencebook: {
+    未選択: 20,
     東京書籍: 0,
     日本図書: 10,
     学校図書: 11,
     教育出版: 12,
     啓林館: 13,
-  }
+  }, _suffix: true
   
   enum musicbook: {
+    未選択: 20,
     教育出版: 12,
     教育芸術社: 15
-  }
+  }, _suffix: true
   
   enum artbook: {
+    未選択: 20,
     開隆堂出版: 16,
     光村図書出版: 3,
     本文教出版: 6
-  }
+  }, _suffix: true
   
   enum pebook: {
+    未選択: 20,
     東京書籍: 0,
     大日本図書: 10,
     大修館書店: 17,
     学研教育みらい:18
-  }
+  }, _suffix: true
   
-  eunm technologybook: {
+  enum technologybook: {
+    未選択: 20,
     東京書籍: 0,
     教育図書: 19,
     開隆堂出版: 16,
-  }
+  }, _suffix: true
   
   enum englishbook: {
+    未選択: 20,
     教育出版: 12,
     光村図書出版: 3,
     啓林館: 13
-  }
+  }, _suffix: true
 end

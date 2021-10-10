@@ -12,11 +12,14 @@
       <div class="m-3">
         <%= f.label :grade, '学年' %>
         <%= f.select :grade, Post.grades.keys , class: 'form-control' %>
+      </div>
+      
+      <div class="m-3" id="area">
         <%= f.label :subject_id, '教科' %>
         <%= f.select :subject_id, Post.subject_ids.keys , class: 'form-control' %>
-        <%= f.label :schoolbook, '教科書' %>
-        <%= f.select :schoolbook, Post.subject_ids.keys , class: 'form-control' %>
       </div>
+      
+      <%= render "schoolbook", f: f %>
       
       <div class="m-3">
         <%= f.label :content, '内容' %>
