@@ -21,19 +21,36 @@ Turbolinks.start()
 $(function() {
   $('#school_type').change(function() {
     let text = $("#school_type option:selected").val();
-    let school_grade = $('#school_grade').detach();
-    let subject_select = $('#subject_select').detach();
-    let elementary_school_grade = $('#elementary_school_grade').detach();
-    let elementary_subject_select = $('#elementary_subject_select').detach();
-    if ( text == "小学校" ){
-      
     
+    if ( text == "小学校" ){
+      $('#post_grade').children().remove();
+      $('#school_grade').fadeIn();
+      $('#post_grade').append($('<option>').html("未選択").val("未選択"));
+      $('#post_grade').append($('<option>').html("学年共通").val("学年共通"));
+      $('#post_grade').append($('<option>').html("１年").val("１年"));
+      $('#post_grade').append($('<option>').html("２年").val("２年"));
+      $('#post_grade').append($('<option>').html("３年").val("３年"));
+      $('#post_grade').append($('<option>').html("４年").val("４年"));
+      $('#post_grade').append($('<option>').html("５年").val("５年"));
+      $('#post_grade').append($('<option>').html("６年").val("６年"));
     } else if( text == "中学校") {
-      $('render').append(elementary_school_grade); 
+      $('#post_grade').children().remove();
+      $('#school_grade').fadeIn();
+      $('#post_grade').append($('<option>').html("未選択").val("未選択"));
+      $('#post_grade').append($('<option>').html("学年共通").val("学年共通"));
+      $('#post_grade').append($('<option>').html("１年").val("１年"));
+      $('#post_grade').append($('<option>').html("２年").val("２年"));
+      $('#post_grade').append($('<option>').html("３年").val("３年"));
     } else if( text == "高校") {
-      
+      $('#post_grade').children().remove();
+      $('#school_grade').fadeIn();
+      $('#post_grade').append($('<option>').html("未選択").val("未選択"));
+      $('#post_grade').append($('<option>').html("学年共通").val("学年共通"));
+      $('#post_grade').append($('<option>').html("１年").val("１年"));
+      $('#post_grade').append($('<option>').html("２年").val("２年"));
+      $('#post_grade').append($('<option>').html("３年").val("３年"));
     } else if( text == "未選択") {
-      
+      $('#school_grade').fadeOut();
     }
   });
 
