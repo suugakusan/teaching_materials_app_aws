@@ -22,25 +22,30 @@ $(function() {
     if ( text == "小学校" ){
     　$('.school_grade').hide();
     　$('.school_subject').hide();
+      $('.subjectbook').hide();
       $('#elementary_school_grade').fadeIn();
       $('#elementary_subject_select').fadeIn();
-      $('.subjectbook').hide();
+      $('#subject_select').hide();
     } else if( text == "中学校") {
       $('.school_grade').hide();
       $('.school_subject').hide();
+      $('.subjectbook').hide();
       $('#school_grade').fadeIn();
       $('#subject_select').fadeIn();
-      $('.subjectbook').hide();
+      $('#elementary_subject_select').hide();
     } else if( text == "高校") {
       $('.school_grade').hide();
       $('.school_subject').hide();
+      $('.subjectbook').hide();
       $('#school_grade').fadeIn();
       $('#subject_select').fadeIn();
-      $('.subjectbook').hide();
+      $('#elementary_subject_select').hide();
     } else if( text == "未選択") {
       $('.school_grade').hide();
       $('.school_subject').hide();
       $('.subjectbook').hide();
+      $('#elementary_subject_select').hide();
+      $('#subject_select').hide();
     }
   });
 
@@ -48,18 +53,53 @@ $(function() {
 
 
 $(function() {
-  $('.school_subject').change(function() {
-    let subjecttext = $(".school_subject option:selected").val();
-    
+  $(document).on('change', '#subject_select', function() {
+    let subjecttext = $("#subject_select  option:selected").val();
     if ( subjecttext == "国語"){
     　$('.subjectbook').hide();
       $('#japanesebooks').fadeIn();
     } else if ( subjecttext == "社会") {
       $('.subjectbook').hide();
       $('#societybooks').fadeIn();
+    } else if ( subjecttext == "理科") {
+      $('.subjectbook').hide();
+      $('#sciencebooks').fadeIn();
+    } else if ( subjecttext == "音楽") {
+      $('.subjectbook').hide();
+      $('#musicbooks').fadeIn();
+    } else if ( subjecttext == "美術") {
+      $('.subjectbook').hide();
+      $('#artbooks').fadeIn();
+    } else if ( subjecttext == "保体") {
+      $('.subjectbook').hide();
+      $('#pebooks').fadeIn();
+    } else if ( subjecttext == "英語") {
+      $('.subjectbook').hide();
+      $('#englishbooks').fadeIn();
+    } else if ( subjecttext == "生活") {
+      $('.subjectbook').hide();
+      $('#lifebooks').fadeIn();
+    } else if ( subjecttext == "未選択") {
+      $('.subjectbook').hide();
     } else if ( subjecttext == "数学") {
       $('.subjectbook').hide();
       $('#mathbooks').fadeIn();
+    } else if ( subjecttext == "技家") {
+      $('.subjectbook').hide();
+      $('#technologybooks').fadeIn();
+    }
+  });
+});
+
+$(function() {
+  $(document).on('change', '#elementary_subject_select', function() {
+    let subjecttext = $("#elementary_subject_select  option:selected").val();
+    if ( subjecttext == "国語"){
+    　$('.subjectbook').hide();
+      $('#japanesebooks').fadeIn();
+    } else if ( subjecttext == "社会") {
+      $('.subjectbook').hide();
+      $('#societybooks').fadeIn();
     } else if ( subjecttext == "算数") {
       $('.subjectbook').hide();
       $('#mathbooks').fadeIn();
@@ -75,9 +115,6 @@ $(function() {
     } else if ( subjecttext == "保体") {
       $('.subjectbook').hide();
       $('#pebooks').fadeIn();
-    } else if ( subjecttext == "技家") {
-      $('.subjectbook').hide();
-      $('#technologybooks').fadeIn();
     } else if ( subjecttext == "英語") {
       $('.subjectbook').hide();
       $('#englishbooks').fadeIn();
@@ -94,5 +131,6 @@ $(function() {
       $('.subjectbook').hide();
     }
   });
-
 });
+
+
