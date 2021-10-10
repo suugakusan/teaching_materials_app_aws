@@ -1,4 +1,19 @@
 <div class="text-center">
   <h1>投稿画面 </h1>
 </div>
-<%= render "form", post: @post %>
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+    <%= form_with(model: @post) do |f| %>
+      <%= render "form", f: f %>
+      <div class="text-center">
+        <%= f.submit '投稿', class: 'btn btn-primary w-75' %>
+      </div>
+    <% end %>
+    <div class="text-center">
+      <%= link_to "キャンセル",:back, class: "btn btn-secondary w-75 m-4", data: { confirm: "投稿せずにもとの画面に戻りますか？" } %>
+    </div>
+  </div>
+</div>
+ 
+    
+ 
