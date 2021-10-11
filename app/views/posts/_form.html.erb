@@ -4,24 +4,20 @@
       <%= f.label :title, 'タイトル' %>
       <%= f.text_field :title, class: 'form-control form-height w-100', required: true %>
     </div>
-    <div class="row justify-content-start">
-      <div class="m-2 col-3" id="school_type">
-　      <%= f.label :schooltype, '校種' %>
+    <div class="row m-3 justify-content-start">
+      <div  class="col-2" id="school_type">
         <%= f.select :schooltype, Post.schooltypes.keys , class: 'form-control' %>
       </div>
       
-      <div class="m-2 col-3" id="school_grade">
-  　　　　<%= f.label :grade, '学年' %>
-  　　　　<%= f.select :grade, Post.grades.keys , class: 'form-control　school_type' %>
+      <div class="col-6" id="school_grade">
+  　　  　<%= f.select :grade, Post.grades.keys , class: 'form-control　school_type'%>
 　　　</div>
 　　　
-　　　<div class="m-2 col-3 school_subject" id="subject_select">
-  　　　　<%= f.label :subject_id, '教科' %>
+　　　<div class="col-3 school_subject" id="subject_select">
   　　　　<%= f.select :subject_id, Post.subject_ids.keys , class: 'form-control' %>
 　　　</div>
     
-    　<div class="m-2 col-4 subjectbook" id="subjectbook">
-  　　　　<%= f.label :schoolbook, '教科書' %>
+    　<div class="col-3 subjectbook" id="subjectbook">
   　　　　<%= f.select :schoolbook, Post.schoolbooks.keys , class: 'form-control'%>
   　　　</div>
     </div>
