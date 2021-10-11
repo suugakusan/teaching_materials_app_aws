@@ -1,9 +1,9 @@
 <div class="search-form m-2">
   <%= form_with url: search_path, method: :get, local: true do |f| %>
-    詳細検索：<%= f.select :keyword1, Post.schooltypes.keys, value: @keyword1, class: "form-control"%>
-    　<%= f.select :keyword1, Post.grades.keys, value: @keyword1, class: "form-control"%>
-    　<%= f.select :keyword1, Post.subject_ids.keys, value: @keyword1, class: "form-control"%>
-    　<%= f.select :keyword1, Post.schoolbooks.keys, value: @keyword1, class: "form-control"%>
+    詳細検索：<%= f.select :schooltype, Post.schooltypes.keys, value: @schooltype, class: "form-control"%>
+    　<%= f.select :grade, Post.grades.keys, value: @keyword, class: "form-control"%>
+    　<%= f.select :subject_id, Post.subject_ids.keys, value: @subject_id, class: "form-control"%>
+    　<%= f.select :schoolbook, Post.schoolbooks.keys, value: @schoolbook, class: "form-control"%>
     <h4>&lt;検索><%= f.text_field :keyword, value: @keyword, class: "form-control mt-3"%>
          <%= f.submit "検索" ,class: "btn btn-primary"%></h4>
 　<% end%>

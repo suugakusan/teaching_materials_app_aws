@@ -12,10 +12,10 @@ class Post < ApplicationRecord
  
  
   def self.search(keyword)
-     where(["title like? OR content like?", "%#{keyword}%", "%#{keyword}%"])
-  end
-  
-  def self.subject_search(keyword1)
-     where(subject_id: keyword1)
+    where(schooltype: keyword)
+    where(grade: keyword)
+    where(subject_id: keyword)
+    where(schoolbook: keyword)
+    where(["title like? OR content like?", "%#{keyword}%", "%#{keyword}%"])
   end
 end
