@@ -1,7 +1,7 @@
 <div class="row text-left">
   <div class="col-sm-6 offset-sm-3">
-    <ul class="list-unstyled">
-      <% if posts.any? %>
+    <% if posts.any? %>
+      <ul class="list-unstyled">
         <% posts.each do |post| %>
           <li>
             <div class="border border-primary p-sm-2 mx-2 p-2 rounded" id="content-color">
@@ -35,9 +35,10 @@
             </div>
           </li>
         <% end %>
-      <% else %>
-        <p id="nopost">該当する投稿はありません</p>
-      <% end %>
-    </ul>
+      </ul>
+      <%== pagy_bootstrap_nav(@pagy) %>
+    <% else %>
+      <p id="nopost">該当する投稿はありません</p>
+    <% end %>
   </div>
 </div>

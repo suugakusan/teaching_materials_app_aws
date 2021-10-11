@@ -1,4 +1,24 @@
- <div class="text-center">
-   <h1>「<%= @keyword%>」の検索結果</h1>
+<div class="text-center">
+ <h1>検索結果</h1>
+</div>
+<div class="row col-sm-6 offset-sm-3 justify-content-center">
+  <div class="text-center search-font">
+    <span>検索内容：</span>
+      <% unless @schooltype == "校種"%>
+        <%= @schooltype%>
+      <% end %>
+      <% unless @grade == "学年"%>
+        <%= @grade%>
+      <% end %>
+      <% unless @subject_id == "教科"%>
+        <%= @subject_id%>
+      <% end %>
+      <% unless @schoolbook == "教科書"%>
+        <%= @schoolbook%>
+      <% end %>
+      <% unless @keyword == ""%>
+       「<%= @keyword %>」
+      <% end %>
+    </div>
  </div>
  <%= render 'posts/search', posts: @posts %>
