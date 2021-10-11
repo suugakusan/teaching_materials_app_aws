@@ -43,17 +43,15 @@ class PostsController < ApplicationController
   end
   
   def search
-    @posts = Post.search(params[:keyword])
+    @posts = Post.search(params[:schooltype], params[:grade], params[:subject_id], params[:schoolbook], params[:keyword])
     @keyword = params[:keyword]
+    @schooltype = params[:schooltype]
+    @grade = params[:grade]
+    @subject_id = params[:subject_id]
+    @schoolbook = params[:schoolbook]
     render "search"
   end
-  
-  def subject_search
-    @posts = Post.subject_search(params[:keyword1])
-    @keyword1 = params[:keyword1]
-    render "subject_search"
-  end
-  
+
   private
 
   def post_params
