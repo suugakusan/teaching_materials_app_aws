@@ -1,19 +1,13 @@
 <div class="search-form m-2">
-  <%= form_with url: subject_search_path, method: :get, local: true do |f| %>
-    <h4>&lt;教科の選択><%= f.select :keyword1, Post.subject_ids.keys, value: @keyword1, class: "form-control"%>
-    
-    
-  <%= f.submit "検索",class: "btn btn-primary"%></h4>
-  <% end %>
-   <div class="form-inline">
-     <div>
-       <%= form_with url: search_path, method: :get, local: true do |f| %>
-       <h4>&lt;検索><%= f.text_field :keyword, value: @keyword, class: "form-control"%>
+  <%= form_with url: search_path, method: :get, local: true do |f| %>
+    詳細検索：<%= f.select :keyword1, Post.schooltypes.keys, value: @keyword1, class: "form-control"%>
+    　<%= f.select :keyword1, Post.grades.keys, value: @keyword1, class: "form-control"%>
+    　<%= f.select :keyword1, Post.subject_ids.keys, value: @keyword1, class: "form-control"%>
+    　<%= f.select :keyword1, Post.schoolbooks.keys, value: @keyword1, class: "form-control"%>
+    <h4>&lt;検索><%= f.text_field :keyword, value: @keyword, class: "form-control mt-3"%>
          <%= f.submit "検索" ,class: "btn btn-primary"%></h4>
-       <% end%>
-     </div>
-    </div>
- </div>
+　<% end%>
+</div>
  <div>
    <%= render 'posts/index', posts: @posts %>
  </div>
