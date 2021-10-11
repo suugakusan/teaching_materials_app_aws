@@ -2,14 +2,14 @@ class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true
   
   enum schooltype:{
-    未選択: 0,
+    校種: 0,
     小学校: 1,
     中学校: 2,
     高校: 3
   }, _suffix: true
   
   enum grade: {
-    未選択: 0,
+    学年: 0,
     学年共通: 1,
     １年: 2,
     ２年: 3,
@@ -21,7 +21,7 @@ class ApplicationRecord < ActiveRecord::Base
   
   
   enum subject_id: {
-    未選択: 0,
+    教科: 0,
     国語: 1,
     社会: 2,
     数学: 3,
@@ -94,7 +94,7 @@ class ApplicationRecord < ActiveRecord::Base
   }, _suffix: true
   
   enum schoolbook: {
-    未選択: 0,
+    教科書: 0,
     東京書籍: 1,
     三省堂: 2,
     教育出版: 3,
