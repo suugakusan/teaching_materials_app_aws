@@ -13,7 +13,11 @@
             </div>
             <div class="col-9">
               <div class="text-left">
-                <p id="post-title">【<%= favorite.subject_id %>】<%= favorite.title %></p>
+                <h4>
+                  【<%= favorite.subject_id %>】<%= link_to(post_path(favorite), class: 'text-decoration-none') do %>
+                    <%= favorite.title %>
+                　   <% end%>
+                </h4>
                 <p><%= favorite.content %></p>
                 <p><a href=<%= favorite.file.url %> download> <%= favorite.file_identifier %></a></p>
                 <p class="text-muted">  投稿日時： <%= favorite.created_at.to_s(:datetime) %></p>
