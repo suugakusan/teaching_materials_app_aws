@@ -11,11 +11,8 @@ class Post < ApplicationRecord
   validates :subject_id, presence: true
  
  
-  def self.search(keyword)
-    where(schooltype: keyword)
-    where(grade: keyword)
-    where(subject_id: keyword)
-    where(schoolbook: keyword)
-    where(["title like? OR content like?", "%#{keyword}%", "%#{keyword}%"])
+  def self.search(keyword1, keyword2, keyword3, keyword4, keyword )
+    where(schooltype: keyword1).where(grade: keyword2).where(subject_id: keyword3).where(schoolbook: keyword4).where(["title like? OR content like?", "%#{keyword}%", "%#{keyword}%"])
   end
+  
 end
