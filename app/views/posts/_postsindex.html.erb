@@ -1,0 +1,39 @@
+<ul class="list-unstyled">
+    <% posts.each do |post| %>
+      <li>
+        <div class="border border-primary p-sm-2 mx-2 p-2 rounded mb-3" id="content-color">
+          <div class="row">
+            <div class="col-3 p-1 text-center">
+              <p><%= link_to post.user.name, user_path(post.user), class: "text-decoration-none" %></p>
+              <%= image_tag post.user.image.url, class: "image" %>
+            </div>
+            <div class="col-9">
+              <div class="text-left">
+                <h4>
+                  【<%= post.subject_id %>】<%= link_to(post_path(post), class: 'text-decoration-none') do %>
+                    <%= post.title %>
+                　   <% end%>
+                </h4>
+                <p><%= post.content %></p>
+                <p><a href=<%= post.file.url %> download> <%= post.file_identifier %></a></p>
+                <p class="text-muted">  投稿日時： <%= post.created_at.to_s(:datetime) %></p>
+              </div>
+              <div  class="container">
+                <div class="row">
+                  <div class="col-7">
+                    <% if current_user == post.user %>
+                      <%= link_to "削除", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm btnpd'%>
+                      <%= link_to "編集", edit_post_path(post) , class: 'btn btn-primary btn-sm btnpd'%>
+                    <% end %>
+                  </div>
+                  <div class="col-5" id="post_<%= post.id %>">
+                    <%= render 'favorites/likebutton', { post: post }%>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
