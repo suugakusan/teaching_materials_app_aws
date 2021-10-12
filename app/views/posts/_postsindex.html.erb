@@ -2,8 +2,8 @@
     <% posts.each do |post| %>
       <li>
         <div class="border border-primary p-sm-2 mx-2 p-2 rounded mb-3" id="content-color">
-          <div class="row">
-            <div class="col-3 p-1 text-center">
+          <div class="row  justify-content-center">
+            <div class="col-3 p-1  text-center">
               <p><%= link_to post.user.name, user_path(post.user), class: "text-decoration-none" %></p>
               <%= image_tag post.user.image.url, class: "image" %>
             </div>
