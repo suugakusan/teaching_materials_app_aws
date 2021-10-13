@@ -29,7 +29,15 @@
 
     <div class="m-3">
       <%= f.label :file, 'ファイル' %>
+      <% if @post.file.present?  %>
+        <% if @post.file_identifier.present? %>
+          (中身：<%= @post.file_identifier %>)
+        <% else %>
+          (ファイル有り)
+        <% end %>
+      <% end %>
       <%= f.file_field :file, class: 'form-control' %>
+      
       <%= f.hidden_field :file_cache %>
       <%= "投稿可能な拡張子(jpg,jpeg,gif,png,docx,xlsx,pptx,txt,pdf)"%>
     </div>
