@@ -1,0 +1,41 @@
+     <% if @comments.any? %>
+        <h3 class="text-center mt-2">コメント一覧</h3>
+      <% @comments.each do |comment| %>
+        <div class="col-8  p-2 mt-1 mb-2 border border-primary rounded" id="content-color">
+            <div class="row  justify-content-center">
+              <div class="col-2 text-center">
+                <%= image_tag comment.user.image.url, class: "image" %>
+              </div>
+              <div class="col-10">
+                <div class="text-left">
+                  <p><%= link_to comment.user.name, user_path(comment.user), class: "text-decoration-none" %></p>
+                  <p><%= comment.comment_content %></p>
+                  <a href=<%= comment.comment_file.url %> download> <%= comment.comment_file_identifier %></a>
+                  <div class="row justify-content-end mt-1">
+                  <span class="col-7 text-muted">  <%= comment.created_at.to_s(:datetime) %></span>
+                  <% if current_user == comment.user %>
+                  <div class="col-3 d-inline-block">
+                    <%= link_to "削除", post_comment_path(@post, comment), method: :delete, data: { confirm: "コメントを削除しますか?" }, class: 'btn btn-danger btn-sm d-inline-block'%>
+                    </div>
+                  <% end %>
+                </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <% end %>
+        <%== pagy_bootstrap_nav(@pagy) %>
+      <% end %>
+      <div class="col-8 border border-primary p-2 rounded mt-3" id="content-color">
+        <h2>コメント</h2>
+        <%= form_with(model: [@post, @comment]) do |f| %>
+        <%= render 'layouts/error_messages', model: f.object %>
+        <%= f.text_area :comment_content, class: 'form-control', required: true %>
+        <%= f.file_field :comment_file, class: 'form-control' %>
+        <%= f.hidden_field :file_cache %>
+        <%= f.hidden_field :post_id, value: @post.id %>
+          <div class="text-center">
+            <%= f.submit '投稿', class: 'btn btn-primary w-75' %>
+          </div>
+        <% end %>
+      </div>
