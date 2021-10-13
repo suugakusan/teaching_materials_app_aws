@@ -9,7 +9,7 @@
               <div class="col-10">
                 <div class="text-left">
                   <p><%= link_to comment.user.name, user_path(comment.user), class: "text-decoration-none" %></p>
-                  <p><%= comment.comment_content %></p>
+                  <p><%= simple_format(h(comment.comment_content)) %></p>
                   <a href=<%= comment.comment_file.url %> download> <%= comment.comment_file_identifier %></a>
                   <div class="row justify-content-end mt-1">
                   <span class="col-7 text-muted">  <%= comment.created_at.to_s(:datetime) %></span>
