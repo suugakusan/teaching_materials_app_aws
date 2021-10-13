@@ -21,7 +21,18 @@
   　　　　<%= f.select :schoolbook, Post.schoolbooks.keys , class: 'form-control'%>
   　　　</div>
     </div>
-    
+    <% if @post.schooltype.present? %>
+  　   校種：<%= @post.schooltype %>
+    <% end %>
+    <% if @post.grade.present? %>
+    　学年：<%= @post.grade %>
+    <% end %>
+    <% if @post.subject_id.present? %>
+    　教科：<%= @post.subject_id %>
+    <% end %>
+    <% if @post.schoolbook.present? %>
+      <p class="m-3">教科書：<%= @post.schoolbook %></p>
+    <% end %>
     <div class="m-3">
       <%= f.label :content, '内容' %>
       <%= f.text_area :content, class: 'form-control', required: true %>
