@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   
   def show
     @post = Post.find(params[:id])
-    @pagy,@comments = pagy(@post.comments)
+    @pagy,@comments = pagy(@post.comments.includes(:user))
     @comment = current_user.comments.new
   end
   
