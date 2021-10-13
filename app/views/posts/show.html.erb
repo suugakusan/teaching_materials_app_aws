@@ -31,19 +31,45 @@
             <object data="<%= @post.file.url %>" type="application/pdf" width="" height=""></object>
           <% end %>
           <p><%= @post.content %></p>
+          <p class="text-muted">  投稿日時： <%= @post.created_at.to_s(:datetime) %></p>
+              <div  class="container">
+                <div class="row">
+                  <div class="col-7">
+                    <% if current_user == @post.user %>
+                      <%= link_to "削除", @post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm btnpd'%>
+                      <%= link_to "編集", edit_post_path(@post) , class: 'btn btn-primary btn-sm btnpd'%>
+                    <% end %>
+                  </div>
+                  <div class="col-5" id="post_<%= @post.id %>">
+                    <%= render 'favorites/likebutton', { post: @post }%>
+                  </div>
+                </div>
+              </div>
         </div>
       </div>
       <% if @comments.any? %>
-        <div class="col-8 border border-primary p-2 rounded mt-3" id="content-color">
-          <% @comments.each do |comment| %>
-            <p><%= link_to comment.user.name, user_path(comment.user), class: "text-decoration-none" %></p>
-            <p><%= comment.comment_content %></p>
-            <p><a href=<%= comment.comment_file.url %> download> <%= comment.comment_file_identifier %></a></p>
-              <% if current_user == comment.user %>
-                <%= link_to "削除", post_comment_path(@post, comment), method: :delete, data: { confirm: "コメントを削除しますか?" }, class: 'btn btn-danger btn-sm btnpd'%>
-              <% end %>
-          <% end %>
+        <h3 class="text-center mt-2">コメント一覧</h3>
+      <% @comments.each do |comment| %>
+        <div class="col-8  p-2 mt-1 mb-3 border border-primary rounded" id="content-color">
+            <div class="row  justify-content-center">
+              <div class="col-2 text-center">
+                <%= image_tag comment.user.image.url, class: "image" %>
+              </div>
+              <div class="col-10">
+                <div class="text-left">
+                  <p><%= link_to comment.user.name, user_path(comment.user), class: "text-decoration-none" %></p>
+                  <p><%= comment.comment_content %></p>
+                  <a href=<%= comment.comment_file.url %> download> <%= comment.comment_file_identifier %></a>
+                  <% if current_user == comment.user %>
+                  <div class="col-2">
+                    <%= link_to "削除", post_comment_path(@post, comment), method: :delete, data: { confirm: "コメントを削除しますか?" }, class: 'btn btn-danger btn-sm d-inline-block'%>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
         </div>
+        <% end %>
         <%== pagy_bootstrap_nav(@pagy) %>
       <% end %>
       <div class="col-8 border border-primary p-2 rounded mt-3" id="content-color">
