@@ -19,7 +19,7 @@
         </div>
         <div class="text-center text-lg-start">
           <%= link_to "はじめる", signup_path, class: 'btn btn-primary', id: "btnp"%>
-          <%= link_to "ゲストログイン", guest_path, method: :post, class: 'btn btn-danger' %>
+          <%= link_to "ゲストログイン", guest_path, method: :post, class: 'btn btn-danger' %> ☚クリック
         </div>
       </div>
     </div>
@@ -27,13 +27,58 @@
       <div class="col-lg-6">
         <div class="text2">
           <h2>検索機能</h2>
-          <p class="title">教科で検索することも、投稿内容で検索することもできます<br>
-          登録すれば、フォロー機能とお気に入り機能が使えます。 </p>
+          <p class="title">投稿内容を検索することができます<br>
+          詳細検索で、校種や教科を絞って検索することもできます</p>
         </div>
       </div>
       <div class="col-lg-6">
-        <%= image_tag '教材検索.png', class: "image" %>
+        <%= image_tag '検索.png', class: "image" %>
       </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-lg-6" id="topimage">
+        <%= image_tag 'コメント.png', class: "image" %>
+      </div>    
+      <div class="col-lg-6">
+        <div class="text2">
+          <h2>コメント機能</h2>
+          <p class="title">コメントし合うことができます。<br>
+            教材を互いに改善し合うこともできます。
+             </p>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-lg-6">
+        <div class="text2">
+          <h2>お気に入り</h2>
+          <p class="title">投稿内容をお気に入りすることができます<br>
+          お気に入り画面で一覧を確認できます</p>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <%= image_tag 'お気に入り.png', class: "image" %>
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col-lg-6" id="topimage">
+        <%= image_tag 'フォロー.png', class: "image" %>
+      </div>    
+      <div class="col-lg-6">
+        <div class="text2">
+          <h2>フォロー機能</h2>
+          <p class="title">フォローし合うことができます。<br>
+            その人の投稿内容をすぐに確認できます。
+             </p>
+        </div>
+      </div>
+    </div>
+    <h2 class="text-center">さぁ、始めよう！</h2>
+    <div class="row justify-content-center">
+    <div class="text-center col-8  m-3 p-2 border-primary">
+      <%= link_to "はじめる", signup_path, class: 'btn btn-primary', id: "btnp"%>
+      <%= link_to "ゲストログイン", guest_path, method: :post, class: 'btn btn-danger' %>☚クリック
+    </div>
     </div>
   </div>
 <% end %>
