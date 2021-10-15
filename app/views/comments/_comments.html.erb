@@ -10,7 +10,10 @@
                 <div class="text-left">
                   <p><%= link_to comment.user.name, user_path(comment.user), class: "text-decoration-none" %></p>
                   <p><%= simple_format(h(comment.comment_content)) %></p>
-                  <a href=<%= comment.comment_file.url %> download> <%= comment.comment_file_identifier %></a>
+                  <% if comment.comment_file_identifier.include?(".pdf")  %>
+                    <object data="<%= comment.comment_file.url %>" type="application/pdf" width="280px" height=""></object>
+                  <% end %>
+                  <p><a href=<%= comment.comment_file.url %> download> <%= comment.comment_file_identifier %></a></p>
                   <div class="row justify-content-end mt-1">
                   <span class="col-7 text-muted">  <%= comment.created_at.to_s(:datetime) %></span>
                   <% if current_user == comment.user %>
