@@ -14,9 +14,10 @@
                   <div class="row justify-content-end mt-1">
                   <span class="col-7 text-muted">  <%= comment.created_at.to_s(:datetime) %></span>
                   <% if current_user == comment.user %>
-                  <div class="col-3 d-inline-block">
+                  <div class="col-5 d-inline-block">
                     <%= link_to "削除", post_comment_path(@post, comment), method: :delete, data: { confirm: "コメントを削除しますか?" }, class: 'btn btn-danger btn-sm d-inline-block'%>
-                    </div>
+                    <%= link_to "編集", edit_post_comment_path(@post, comment) , class: 'btn btn-primary btn-sm btnpd'%>
+                  </div>
                   <% end %>
                 </div>
                 </div>
