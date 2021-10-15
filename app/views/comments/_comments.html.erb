@@ -10,7 +10,8 @@
                 <div class="text-left">
                   <p><%= link_to comment.user.name, user_path(comment.user), class: "text-decoration-none" %></p>
                   <p><%= simple_format(h(comment.comment_content)) %></p>
-                  <% if comment.comment_file_identifier.include?(".pdf")  %>
+                  
+                  <% if comment.comment_file_identifier.to_s.include?(".pdf")  %>
                     <object data="<%= comment.comment_file.url %>" type="application/pdf" width="280px" height=""></object>
                   <% end %>
                   <p><a href=<%= comment.comment_file.url %> download> <%= comment.comment_file_identifier %></a></p>
