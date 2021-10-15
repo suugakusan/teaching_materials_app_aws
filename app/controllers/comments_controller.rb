@@ -11,6 +11,21 @@ class CommentsController < ApplicationController
     end
   end
   
+  def edit
+    @comment = current_user.comments.find(params[:id])
+  end
+  
+  def update
+    comment = current_user.comments.find(params[:id])
+    if comment.update(comment_params)
+      flash[:success] = 'コメントは正常に更新されました'
+      redirect_to root_url
+    else
+      flash.now[:danger] = 'コメントは更新されませんでした'
+      render :edit
+    end
+  end
+  
   def destroy
     @comment = current_user.comments.find(params[:id])
     @comment.destroy
