@@ -21,17 +21,17 @@
 
 ## 使用イメージ
 ### ゲストログイン
-<img src="https://i.gyazo.com/3cb08554f75f96b7731dcb99c953d8b3.gif" width="500">
+<img src="https://i.gyazo.com/241aa99031cf3529e6bd5398fece6648.gif" width="500">
 
 ### お気に入り機能
-<img src="https://i.gyazo.com/4c99ee7be44f1de86904d575fcb36101.gif" width="500">
+<img src="https://i.gyazo.com/1cf595a3f7d4228ec1ac943629cf268c.gif" width="500">
 
 ### フォロー機能
-<img src="https://i.gyazo.com/457c13389149adb6bfb183dde289884f.gif" width="500">
+<img src="https://i.gyazo.com/74b48bfce20dbc3d12615cf9ca11725e.gif" width="500">
 
 ### 検索機能
-<img src="https://i.gyazo.com/f738f95ee718f6fd18a65662b5aad8cd.gif" width="500">
-<img src="https://i.gyazo.com/991eafb5c53d85f1123edf03c6ccd242.gif" width="500">
+<img src="https://i.gyazo.com/2cc157b623999d1ee744fd9c50dcd07f.gif" width="500">
+<img src="https://i.gyazo.com/00472f7156847ac5e048bae314465594.gif" width="500">
 
 #
 ### 機能一覧
