@@ -47,8 +47,9 @@
 |8  |記事投稿機能(CRUD)  |×  |
 |9  |お気に入り機能(非同期)  |×  |
 |10  |フォロー機能  |×  |
+|11 |コメント機能|carrierwave  |
 ### ER図
-![ER図](https://user-images.githubusercontent.com/87798070/133949142-9b84452c-5945-45e2-8cab-1854cbfff1d7.png)
+![ER図②](https://user-images.githubusercontent.com/87798070/137575026-0da721ef-6075-4d39-8b6a-b36d615bb2be.png)
 ### 使用技術
 * 言語 : Ruby (3.0.0)
 * フレームワーク：Ruby on Rails (6.1.4.1)
