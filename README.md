@@ -3,8 +3,9 @@
 投稿されたデータが一覧に表示され、誰でもその教材をダウンロードすることができます。
 ### URL
 - アプリURL：https://teaching-materials-app.herokuapp.com/  （ゲストログインボタンを押すとサインインせず閲覧可能）
-### [Qiita](https://qiita.com/suugakusan/items/15b5b6e9b81726344342)
-- 開発の経緯や工夫・苦労した点などの詳細談を[【Rails】「教材シェア」アプリを作成しました](https://qiita.com/suugakusan/items/15b5b6e9b81726344342)に投稿いたしました。
+### [Qiita](https://qiita.com/suugakusan/items/0b021ccb21fc64591b97)
+- 開発の経緯や工夫・苦労した点などの詳細談を[【Rails】「教材シェア」アプリを作成しました②](https://qiita.com/suugakusan/items/0b021ccb21fc64591b97)に投稿いたしました。
+- 最初のQiita[【Rails】「教材シェア」アプリを作成しました](https://qiita.com/suugakusan/items/15b5b6e9b81726344342)
 ## アプリの特徴
 * 各教科ごとに教材の検索ができ、欲しい教材を簡単に手に入れられるようにしました。
 * お気に入り登録とフォロー機能があり、自分好みの投稿を保存することができます。
