@@ -1,13 +1,40 @@
 ---
 ja:
+  attributes:
+    id: ID
+    namespace: 名前空間
+    resource_type: リソースタイプ
+    resource_id: リソースID
+    author_type: 著者タイプ
+    author_id: 著者ID
+    created_at: 作成日時
+    updated_at: 更新日時
   activerecord:
     models:
+      user: ユーザー
       post: 投稿
     attributes:
+      user:
+        name: 名前
+        image: アイコン
+        profile: プロフィール
+        prefecture_id: 出身地
+        school_id: 校種
+        password_digest: パスワード
       post:
         title: タイトル
         content: 内容
         file: ファイル
+        grade: 学年
+        schoolbook: 教科書名
+        schooltype: 校種
+        subject_id: 教科名
+        user: ユーザー
+      comment:
+        comment_content: コメント内容
+        comment_file: ファイル
+        post: 投稿
+        user: ユーザー
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
