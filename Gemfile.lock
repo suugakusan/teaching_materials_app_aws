@@ -97,6 +97,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.10.0)
+      devise (>= 4.8.0)
     erubi (1.10.0)
     excon (0.85.0)
     ffi (1.15.4)
@@ -291,6 +293,7 @@ DEPENDENCIES
   byebug
   carrierwave (~> 2.0)
   devise
+  devise-i18n
   fog-aws (~> 3.12)
   jbuilder (~> 2.7)
   listen (~> 3.3)
