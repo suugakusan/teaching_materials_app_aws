@@ -49,6 +49,7 @@
 |9  |お気に入り機能(非同期)  |×  |
 |10  |フォロー機能  |×  |
 |11 |コメント機能|carrierwave  |
+|12 |管理者画面 |ActiveAdmin |
 ### ER図
 ![ER図②](https://user-images.githubusercontent.com/87798070/137575026-0da721ef-6075-4d39-8b6a-b36d615bb2be.png)
 ### 使用技術
