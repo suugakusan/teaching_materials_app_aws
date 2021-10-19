@@ -32,8 +32,6 @@ ActiveAdmin.register User do
     f.inputs do
       f.input :name
       f.input :email
-      f.input :password
-      f.input :password_confirmation
       f.input :image
       f.input :prefecture_id
       f.input :school_id
