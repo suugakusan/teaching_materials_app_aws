@@ -21,6 +21,7 @@ ja:
         prefecture_id: 出身地
         school_id: 校種
         password_digest: パスワード
+        group: グループ
       post:
         title: タイトル
         content: 内容

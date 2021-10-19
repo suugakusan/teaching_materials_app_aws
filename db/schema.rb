@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_17_202638) do
+ActiveRecord::Schema.define(version: 2021_10_19_102816) do
 
   create_table "active_admin_comments", charset: "utf8mb4", force: :cascade do |t|
     t.string "namespace"
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 2021_10_17_202638) do
     t.text "profile"
     t.integer "prefecture_id"
     t.integer "school_id"
+    t.integer "group"
   end
 
   add_foreign_key "comments", "posts"
