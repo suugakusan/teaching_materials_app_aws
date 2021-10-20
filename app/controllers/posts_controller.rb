@@ -45,13 +45,18 @@ class PostsController < ApplicationController
   end
   
   def search
-    @pagy,@posts = pagy(Post.search(params[:schooltype], params[:grade], params[:subject_id], params[:schoolbook], params[:keyword]))
-    @keyword = params[:keyword]
-    @schooltype = params[:schooltype]
-    @grade = params[:grade]
-    @subject_id = params[:subject_id]
-    @schoolbook = params[:schoolbook]
-    render "search"
+    if current_user.group === nil
+      @pagy,@posts = pagy(Post.search(params[:schooltype], params[:grade], params[:subject_id], params[:schoolbook], params[:keyword]))
+    else
+      showid = User.where(group: current_user.group).ids
+      @pagy, @posts = pagy(Post.where(user_id: showid).search(params[:schooltype], params[:grade], params[:subject_id], params[:schoolbook], params[:keyword]))
+    end
+      @keyword = params[:keyword]
+      @schooltype = params[:schooltype]
+      @grade = params[:grade]
+      @subject_id = params[:subject_id]
+      @schoolbook = params[:schoolbook]
+      render "search"
   end
 
   private

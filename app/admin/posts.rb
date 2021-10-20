@@ -14,5 +14,16 @@ ActiveAdmin.register Post do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
+  form do |f|
+    f.inputs do
+      f.input :title
+      f.input :file
+      f.input :subject_id
+      f.input :content
+      f.input :grade
+      f.input :schoolbook
+      f.input :schooltype
+    end
+    f.actions
+  end
 end
