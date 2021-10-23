@@ -13,6 +13,7 @@ ja:
     models:
       user: ユーザー
       post: 投稿
+      contact: お問い合わせ
     attributes:
       user:
         name: 名前
@@ -36,6 +37,10 @@ ja:
         comment_file: ファイル
         post: 投稿
         user: ユーザー
+      contact:
+        name: 氏名
+        email: メールアドレス
+        content: 内容
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

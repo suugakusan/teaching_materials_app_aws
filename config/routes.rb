@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
-  
+  resources :contacts, only: [:index, :create]
   get 'signup', to: 'users#new'
   get 'search', to: 'posts#search'
   get 'subject_search', to: 'posts#subject_search'

@@ -1,0 +1,16 @@
+<%= render 'layouts/error_messages', model: f.object %>
+  <div class="bg-secondary m-4 p-3 rounded ">
+    <div class="m-3 mb-4">
+      <%= f.label :name %> (任意)
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+    <div class="m-3 mb-4">
+      <%= f.label :email %> (必須)
+      <%= f.email_field :email, required: true, pattern: "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]+$", class: 'form-control' %>
+    </div>
+    <div class="m-3 mb-4">
+      <%= f.label :content %> (必須)
+      <%= f.text_area :content, required: true, class: 'form-control' %>
+    </div>
+  </div>
+  
