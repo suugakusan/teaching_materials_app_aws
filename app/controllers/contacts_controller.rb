@@ -11,7 +11,6 @@ class ContactsController < ApplicationController
       flash[:success] = 'お問い合わせのメールを管理者に送信しました。'
       redirect_to root_path
     else
-      flash[:danger] = 'お問い合わせの送信に失敗しました。'
       render :index
     end
   end
@@ -20,7 +19,7 @@ class ContactsController < ApplicationController
 
   def contact_params
     params.require(:contact)
-          .permit(:name, :email, :content)
+          .permit(:name, :email, :content, :submitted, :confirmed)
           .merge(remote_ip: request.remote_ip)
   end
 end
