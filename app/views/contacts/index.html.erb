@@ -1,11 +1,17 @@
 <div class="row  justify-content-center">
   <div class="col-10 p-1  text-center">
-<h1>お問い合わせ</h1>
-
-<%= form_with model: @contact, local: true do |f| %>
-
-  <%= render "submit_fields", f: f %>
-  <%= f.submit "送信", class: "btn btn-primary w-75" %>
-<% end %>
-</div>
+    <h1>お問い合わせ<%= " 《確認》" if @contact.submitted == "1" %></h1>
+    <%= form_with model: @contact, local: true do |f| %>
+      <%= f.hidden_field :submitted %>
+      <% if @contact.submitted == "1" %>
+        <%= render "confirm_fields", f: f %>
+        <%= f.button "送信", name: "contact[confirmed]", value: "1", class: 'form-control btn-primary mb-3' %>
+        <%= f.button "戻る", name: "contact[confirmed]", value: "" , class: 'form-control btn-secondary'%>
+      <% else %>
+        <%= render "submit_fields", f: f %>
+        <%= f.submit "確認",class: "btn btn-primary w-75" %>
+        <%= link_to "キャンセル", root_path , class: "btn btn-secondary w-75 m-4", data: { confirm: "お問い合わせをせずに戻りますか？" } %>
+      <% end %>
+    <% end %>
+  </div>
 </div>

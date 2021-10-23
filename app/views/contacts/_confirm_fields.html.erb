@@ -1,0 +1,18 @@
+<%= render 'layouts/error_messages', model: f.object %>
+  <div class="bg-secondary m-4 p-3 rounded ">
+    <div  class="m-3 mb-4">
+      <%= f.label :name %>
+      <%= f.text_field :name, readonly: true, class: 'form-control' %>
+      <%= f.hidden_field :name %>
+    </div>
+   <div class="m-3 mb-4">
+     <%= f.label :email %>
+     <%= f.text_field :email, readonly: true, class: 'form-control' %>
+     <%= f.hidden_field :email %>
+    </div>
+    <div class="m-3 mb-4">
+      <%= f.label :content %>
+      <%= f.text_area :content, readonly: true, class: 'form-control' %>
+      <%= f.hidden_field :content %>
+    </div>
+  </div>
