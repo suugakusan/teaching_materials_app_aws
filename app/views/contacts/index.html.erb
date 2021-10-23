@@ -1,16 +1,20 @@
 <div class="row  justify-content-center">
-  <div class="col-10 p-1  text-center">
-    <h1>お問い合わせ<%= " 《確認》" if @contact.submitted == "1" %></h1>
+  <div class="col-9">
+    <h1 class="text-center">お問い合わせ<%= " 《確認》" if @contact.submitted == "1" %></h1>
     <%= form_with model: @contact, local: true do |f| %>
       <%= f.hidden_field :submitted %>
       <% if @contact.submitted == "1" %>
         <%= render "confirm_fields", f: f %>
-        <%= f.button "送信", name: "contact[confirmed]", value: "1", class: 'form-control btn-primary mb-3' %>
-        <%= f.button "戻る", name: "contact[confirmed]", value: "" , class: 'form-control btn-secondary'%>
+        <div class="text-center">
+          <%= f.button "送信", name: "contact[confirmed]", value: "1", class: 'form-control btn-primary m-2 w-100' %>
+          <%= f.button "戻る", name: "contact[confirmed]", value: "" , class: 'form-control btn-secondary m-2 w-100'%>
+        </div>
       <% else %>
         <%= render "submit_fields", f: f %>
-        <%= f.submit "確認",class: "btn btn-primary w-75" %>
-        <%= link_to "キャンセル", root_path , class: "btn btn-secondary w-75 m-4", data: { confirm: "お問い合わせをせずに戻りますか？" } %>
+        <div class="text-center">
+          <%= f.submit "確認",class: "btn btn-primary m-2 w-100" %>
+          <%= link_to "キャンセル", root_path , class: "btn btn-secondary w-100 m-2", data: { confirm: "お問い合わせをせずに戻りますか？" } %>
+        </div>
       <% end %>
     <% end %>
   </div>
