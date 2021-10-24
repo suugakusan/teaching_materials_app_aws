@@ -36,7 +36,12 @@
 <img src="https://i.gyazo.com/2cc157b623999d1ee744fd9c50dcd07f.gif" width="500">
 <img src="https://i.gyazo.com/00472f7156847ac5e048bae314465594.gif" width="500">
 
-#
+### 管理者画面（グループの設定）
+<img src="https://i.gyazo.com/100e2db27eb94e23173683d13039c4db.gif" width="500">
+同じグループの投稿のみ表示されます。ゲストログインはすべての投稿が見れます。
+<img src="https://i.gyazo.com/105ecd1dec57c0db90723cbece95ee4c.gif" width="500">
+
+
 ### 機能一覧
 |  |機能  |gem等  |
 |:---: |:---: |:---: |
