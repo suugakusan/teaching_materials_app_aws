@@ -67,5 +67,20 @@ RSpec.describe User, type: :model do
         expect(user.email).to eq("test@example.com")
       end
     end
+       context "password が空のとき" do
+      let(:user) { build(:user, password: "") }
+      it "エラーが発生する" do
+        expect(subject).to eq false
+        expect(user.errors.messages[:password]).to include "を入力してください"
+      end
+    end
+    context "password が４文字より少ないとき" do
+      let(:password){ Faker::Internet.password(min_length: 3, max_length: 3)}
+      let(:user) { build(:user, password: password) }
+      it "エラーが発生する" do
+        expect(subject).to eq false
+        expect(user.errors.messages[:password]).to include "は4文字以上で入力してください"
+      end
+    end
   end
 end
