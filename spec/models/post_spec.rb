@@ -59,5 +59,20 @@ RSpec.describe Post, type: :model do
         expect(subject).to eq true
       end
     end
+    context "file が空のとき" do
+      let(:post) { build(:post, file: "") }
+      it "エラーが発生する" do
+        expect(subject).to eq false
+        expect(post.errors.messages[:file]).to include "を入力してください"
+      end
+    end
+    context "file の拡張子が指定されていないものだったとき" do
+      let(:post) { build(:post, file: fileimage) }
+      let(:fileimage){ Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/テスト.dotx'))}
+      it "エラーが発生する" do
+        expect(subject).to eq false
+        expect(post.errors.messages[:file]).to include "\"dotx\"ファイルのアップロードは許可されていません。アップロードできるファイルタイプ: jpg, jpeg, gif, png, docx, xlsx, pptx, txt, pdf",+"を入力してください"
+      end
+    end
   end
 end
