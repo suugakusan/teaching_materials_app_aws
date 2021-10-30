@@ -33,5 +33,39 @@ RSpec.describe User, type: :model do
         expect(subject).to eq true
       end
     end
+       context "email が空のとき" do
+      let(:user) { build(:user, email: "") }
+      it "エラーが発生する" do
+        expect(subject).to eq false
+        expect(user.errors.messages[:email]).to include "を入力してください"
+      end
+    end
+    context "email が255文字のとき" do
+      let(:user) { build(:user, email: "test1@test1.com"+"a"* 240) }
+      it "保存できる" do
+        expect(subject).to eq true
+      end
+    end
+    context "email が256以上の文字のとき" do
+      let(:user) { build(:user, email: "a" * 256) }
+      it "エラーが発生する" do
+        expect(subject).to eq false
+        expect(user.errors.messages[:email]).to include "は255文字以内で入力してください"
+      end
+    end
+    context "email がすでに存在するとき" do
+      before { create(:user, email: "test@example.com") }
+      let(:user) { build(:user, email: "test@example.com") }
+      it "エラーが発生する" do
+        expect(subject).to eq false
+        expect(user.errors.messages[:email]).to include "はすでに存在します"
+      end
+    end
+    context "email に大文字が含まれているとき" do
+      let(:user) { create(:user, email: "TEST@example.com") }
+      it "小文字化されている" do
+        expect(user.email).to eq("test@example.com")
+      end
+    end
   end
 end
