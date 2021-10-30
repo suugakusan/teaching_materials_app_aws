@@ -14,15 +14,15 @@ RSpec.describe User, type: :model do
         expect(user.errors.messages[:name]).to include "を入力してください"
       end
     end
-    context "name が51文字以上のとき" do
-      let(:user) { build(:user, name: "a" * 51) }
+    context "name が21文字以上のとき" do
+      let(:user) { build(:user, name: "a" * 21) }
       it "エラーが発生する" do
         expect(subject).to eq false
-        expect(user.errors.messages[:name]).to include "は50文字以内で入力してください"
+        expect(user.errors.messages[:name]).to include "は20文字以内で入力してください"
       end
     end
-    context "name が50文字のとき" do
-      let(:user) { build(:user, name: "a" * 50) }
+    context "name が20文字のとき" do
+      let(:user) { build(:user, name: "a" * 20) }
       it "保存できる" do
         expect(subject).to eq true
       end
@@ -33,24 +33,24 @@ RSpec.describe User, type: :model do
         expect(subject).to eq true
       end
     end
-       context "email が空のとき" do
+    context "email が空のとき" do
       let(:user) { build(:user, email: "") }
       it "エラーが発生する" do
         expect(subject).to eq false
         expect(user.errors.messages[:email]).to include "を入力してください"
       end
     end
-    context "email が255文字のとき" do
-      let(:user) { build(:user, email: "test1@test1.com"+"a"* 240) }
+    context "email が30文字のとき" do
+      let(:user) { build(:user, email: "test1@test1.com"+"a"* 15) }
       it "保存できる" do
         expect(subject).to eq true
       end
     end
-    context "email が256以上の文字のとき" do
-      let(:user) { build(:user, email: "a" * 256) }
+    context "email が31以上の文字のとき" do
+      let(:user) { build(:user, email: "test1@test1.com" * 16) }
       it "エラーが発生する" do
         expect(subject).to eq false
-        expect(user.errors.messages[:email]).to include "は255文字以内で入力してください"
+        expect(user.errors.messages[:email]).to include "は30文字以内で入力してください"
       end
     end
     context "email がすでに存在するとき" do
