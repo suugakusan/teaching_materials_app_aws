@@ -33,5 +33,31 @@ RSpec.describe Post, type: :model do
         expect(subject).to eq true
       end
     end
+    context "content が空のとき" do
+      let(:post) { build(:post, content: "") }
+      it "エラーが発生する" do
+        expect(subject).to eq false
+        expect(post.errors.messages[:content]).to include "を入力してください"
+      end
+    end
+    context "content が256文字以上のとき" do
+      let(:post) { build(:post, content: "a" * 256) }
+      it "エラーが発生する" do
+        expect(subject).to eq false
+        expect(post.errors.messages[:content]).to include "は255文字以内で入力してください"
+      end
+    end
+    context "content が255文字のとき" do
+      let(:post) { build(:post, content: "a" * 255) }
+      it "保存できる" do
+        expect(subject).to eq true
+      end
+    end
+    context "content が1文字のとき" do
+      let(:post) { build(:post, content: "a" ) }
+      it "保存できる" do
+        expect(subject).to eq true
+      end
+    end
   end
 end
