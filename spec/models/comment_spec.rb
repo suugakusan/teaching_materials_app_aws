@@ -33,5 +33,17 @@ RSpec.describe Comment, type: :model do
         expect(subject).to eq true
       end
     end
+    context "投稿が削除されたとき" do
+      subject { post.destroy }
+
+      let(:post) { create(:post) }
+      before do
+        create_list(:comment, 2, post: post)
+        create(:comment)
+      end
+      it "その投稿のコメントも削除される" do
+        expect { subject }.to change { post.comments.count }.by(-2)
+      end
+    end
   end
 end
