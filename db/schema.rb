@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2021_10_23_051656) do
 
-  create_table "active_admin_comments", charset: "utf8mb4", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
     t.string "resource_type"
@@ -26,7 +29,7 @@ ActiveRecord::Schema.define(version: 2021_10_23_051656) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource"
   end
 
-  create_table "admin_users", charset: "utf8mb4", force: :cascade do |t|
+  create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -38,7 +41,7 @@ ActiveRecord::Schema.define(version: 2021_10_23_051656) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "comments", charset: "utf8mb4", force: :cascade do |t|
+  create_table "comments", force: :cascade do |t|
     t.string "comment_content"
     t.bigint "user_id", null: false
     t.bigint "post_id", null: false
@@ -49,7 +52,7 @@ ActiveRecord::Schema.define(version: 2021_10_23_051656) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "contacts", charset: "utf8mb4", force: :cascade do |t|
+  create_table "contacts", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.text "content"
@@ -58,7 +61,7 @@ ActiveRecord::Schema.define(version: 2021_10_23_051656) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "favorites", charset: "utf8mb4", force: :cascade do |t|
+  create_table "favorites", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "post_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -68,7 +71,7 @@ ActiveRecord::Schema.define(version: 2021_10_23_051656) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
-  create_table "posts", charset: "utf8mb4", force: :cascade do |t|
+  create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "file"
     t.integer "subject_id"
@@ -82,7 +85,7 @@ ActiveRecord::Schema.define(version: 2021_10_23_051656) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
-  create_table "relationships", charset: "utf8mb4", force: :cascade do |t|
+  create_table "relationships", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "follow_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -92,7 +95,7 @@ ActiveRecord::Schema.define(version: 2021_10_23_051656) do
     t.index ["user_id"], name: "index_relationships_on_user_id"
   end
 
-  create_table "users", charset: "utf8mb4", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password_digest"

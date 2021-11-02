@@ -190,7 +190,6 @@ GEM
     minitest (5.14.4)
     msgpack (1.4.2)
     multi_json (1.15.0)
-    mysql2 (0.5.3)
     nio4r (2.5.8)
     nokogiri (1.12.4-x86_64-linux)
       racc (~> 1.4)
@@ -338,7 +337,6 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   letter_opener_web (~> 1.0)
   listen (~> 3.3)
-  mysql2 (~> 0.5)
   pagy
   pg (>= 0.18, < 2.0)
   pry-byebug
