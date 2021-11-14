@@ -60,7 +60,9 @@
 |13 |お問い合わせ|Action Mailer||
 |14 |テスト実装 |RSpec / Faker / FactoryBot||
 ### ER図
-![ER図②](https://i.gyazo.com/97299821000873e2875c79d1c7b68719.png)
+![ER図②](https://gyazo.com/97299821000873e2875c79d1c7b68719.png)
+### インフラ構成図
+![インフラ構成図](https://i.gyazo.com/bee202f7b12ea073d0aa8fecb35726ee.png)
 ### 使用技術
 * 言語 : Ruby (3.0.0)
 * フレームワーク：Ruby on Rails (6.1.4.1)
