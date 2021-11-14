@@ -60,7 +60,7 @@
 |13 |お問い合わせ|Action Mailer||
 |14 |テスト実装 |RSpec / Faker / FactoryBot||
 ### ER図
-![ER図②](https://user-images.githubusercontent.com/87798070/137575026-0da721ef-6075-4d39-8b6a-b36d615bb2be.png)
+![ER図②](https://i.gyazo.com/97299821000873e2875c79d1c7b68719.png)
 ### 使用技術
 * 言語 : Ruby (3.0.0)
 * フレームワーク：Ruby on Rails (6.1.4.1)
