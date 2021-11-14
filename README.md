@@ -2,7 +2,7 @@
 &emsp;教材を投稿し合うアプリケーションです。ユーザーが授業で使っているプリントや参考資料などをアップロードして、投稿できます。
 投稿されたデータが一覧に表示され、誰でもその教材をダウンロードすることができます。
 ### URL
-- アプリURL：https://teaching-materials-app.herokuapp.com/  （ゲストログインボタンを押すとサインインせず閲覧可能）
+- アプリURL：https://teaching-material-app.com/  （ゲストログインボタンを押すとサインインせず閲覧可能）
 ### [Qiita](https://qiita.com/suugakusan/items/0b021ccb21fc64591b97)
 - 開発の経緯や工夫・苦労した点などの詳細談を[【Rails】「教材シェア」アプリを作成しました②](https://qiita.com/suugakusan/items/0b021ccb21fc64591b97)に投稿いたしました。
 - 最初のQiita[【Rails】「教材シェア」アプリを作成しました](https://qiita.com/suugakusan/items/15b5b6e9b81726344342)
@@ -58,14 +58,18 @@
 |11 |コメント機能|carrierwave  |
 |12 |管理者画面 |ActiveAdmin ||
 |13 |お問い合わせ|Action Mailer||
+|14 |テスト実装 |RSpec / Faker / FactoryBot||
 ### ER図
-![ER図②](https://user-images.githubusercontent.com/87798070/137575026-0da721ef-6075-4d39-8b6a-b36d615bb2be.png)
+![ER図②](https://gyazo.com/97299821000873e2875c79d1c7b68719.png)
+### インフラ構成図
+![インフラ構成図](https://i.gyazo.com/bee202f7b12ea073d0aa8fecb35726ee.png)
 ### 使用技術
 * 言語 : Ruby (3.0.0)
 * フレームワーク：Ruby on Rails (6.1.4.1)
 * フロントエンド : HTML&CSS/Bootstrap/JavaScript/SCSS
 * DB : PostgreSQL
-* インフラ : Heroku(ステージング環境→本番環境)+AWS(S3)
+* (旧)インフラ : Heroku(ステージング環境→本番環境)+AWS(S3)
+* (現)インフラ : AWS(VPC, EC2, RDS, S3, ACM, ALB, CloudFront, IAM) + Capistrano
 * ソースコード管理：GitHub(Projectsのカンバン方式でタスクを管理)
 ### 開発環境
 * OS : windows Lenovo
