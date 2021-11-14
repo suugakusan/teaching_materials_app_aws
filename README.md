@@ -58,6 +58,7 @@
 |11 |コメント機能|carrierwave  |
 |12 |管理者画面 |ActiveAdmin ||
 |13 |お問い合わせ|Action Mailer||
+|14 |テスト実装 |RSpec / Faker / FactoryBot||
 ### ER図
 ![ER図②](https://user-images.githubusercontent.com/87798070/137575026-0da721ef-6075-4d39-8b6a-b36d615bb2be.png)
 ### 使用技術
@@ -65,7 +66,8 @@
 * フレームワーク：Ruby on Rails (6.1.4.1)
 * フロントエンド : HTML&CSS/Bootstrap/JavaScript/SCSS
 * DB : PostgreSQL
-* インフラ : Heroku(ステージング環境→本番環境)+AWS(S3)
+* (旧)インフラ : Heroku(ステージング環境→本番環境)+AWS(S3)
+* (現)インフラ : AWS(VPC, EC2, RDS, S3, ACM, ALB, CloudFront, IAM) + Capistrano
 * ソースコード管理：GitHub(Projectsのカンバン方式でタスクを管理)
 ### 開発環境
 * OS : windows Lenovo
