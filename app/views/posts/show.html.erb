@@ -30,16 +30,17 @@
           <% end %>
           <p><%= simple_format(h(@post.content)) %></p>
           <p class="text-muted">  投稿日時： <%= @post.created_at.to_s(:datetime) %></p>
-          <div  class="container">
-            <div class="row">
-              <div class="col-7">
-                <% if current_user == @post.user %>
-                  <%= link_to "削除", @post, method: :delete, data: { confirm: "削除しますか?" }, class: 'btn btn-danger btn-sm btnpd'%>
-                  <%= link_to "編集", edit_post_path(@post) , class: 'btn btn-primary btn-sm btnpd'%>
-                <% end %>
-              </div>
-              <div class="col-5" id="post_<%= @post.id %>">
-                <%= render 'favorites/likebutton', { post: @post }%>
+            <div  class="container">
+              <div class="row">
+                <div class="col-7">
+                  <% if current_user == @post.user %>
+                    <%= link_to "削除", @post, method: :delete, data: { confirm: "削除しますか?" }, class: 'btn btn-danger btn-sm btnpd'%>
+                    <%= link_to "編集", edit_post_path(@post) , class: 'btn btn-primary btn-sm btnpd'%>
+                  <% end %>
+                </div>
+                <div class="col-5" id="post_<%= @post.id %>">
+                  <%= render 'favorites/likebutton', { post: @post }%>
+                </div>
               </div>
             </div>
           </div>
