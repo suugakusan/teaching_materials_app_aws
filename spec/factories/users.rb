@@ -4,4 +4,8 @@ FactoryBot.define do
     email { Faker::Internet.unique.email }
     password { Faker::Internet.password(min_length: 4, max_length: 8)}
   end
+
+  trait :invalid do
+    email { nil }
+  end
 end
