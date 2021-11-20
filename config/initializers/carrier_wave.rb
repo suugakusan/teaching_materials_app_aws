@@ -7,5 +7,6 @@ if Rails.env.production?
       region: "ap-northeast-1"
     }
     config.fog_directory = "teaching-materials-app"
+    config.asset_host = "https://static.teaching-material-app.com"
   end
 end
